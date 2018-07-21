@@ -1,0 +1,22 @@
+#logo{
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2cd2db;
+    border-color: #2cd2db;
+}
+
+.blue{
+    background-color: #2cd2db;
+}
+
+.btn-light{
+    margin-top: 20px;
+}
+
+body{
+    background-image: url("../../img/login/background.jpg");
+    background-size: 100%;
+}
