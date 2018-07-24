@@ -33,7 +33,7 @@
                       <i class="icon-user"></i>
                     </span>
                   </div>
-                  <input class="form-control" type="text" placeholder="Cédula">
+                  <input class="form-control" type="text" placeholder="Cédula" id="txtCedula">
                 </div>
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
@@ -41,14 +41,14 @@
                       <i class="icon-lock"></i>
                     </span>
                   </div>
-                  <input class="form-control" type="password" placeholder="Contraseña">
+                  <input id="txtPassword" class="form-control" type="password" placeholder="Contraseña">
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <button class="btn btn-primary px-4" type="button">Iniciar sesión</button>
+                    <button id="btnIniciarSesion"class="btn btn-primary px-4" type="button">Iniciar sesión</button>
                   </div>
                   <div class="col-6 text-right">
-                    <button class="btn btn-link px-0" type="button">¿Olvidó su contraseña?</button>
+                    <button id="btnOlvidoContrasenna"class="btn btn-link px-0" type="button">¿Olvidó su contraseña?</button>
                   </div>
                 </div>
               </div>
@@ -58,7 +58,7 @@
                 <div>
                   <h2>Crear cuenta</h2>
                   <p>La fuerza no viene de una capacidad física. Viene de una voluntad indomable.<br><span>-Mahatma Gandhi.</span></p>
-                  <button class="btn btn-light px-4" type="button">Registrarme</button>
+                  <button id="btnRegistrarme" class="btn btn-light px-4" type="button">Registrarme</button>
                 </div>
               </div>
             </div>
@@ -73,5 +73,9 @@
     <script src="node_modules/pace-progress/pace.min.js"></script>
     <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!--JavaScript -->
+    <script src="js/login/servicio_login.js"></script>
+    <script src="js/login/controlador_login.js"></script>
   </body>
 </html>
