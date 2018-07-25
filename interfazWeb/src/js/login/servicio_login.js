@@ -19,3 +19,7 @@ function validarUsuario(psCedula,psPassword){
     }
     return bUsuario;
 }
+
+function construirMenuPricipalCliente(){
+    /*Aqui se construye el menu */
+}

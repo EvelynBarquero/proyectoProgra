@@ -40,3 +40,4 @@ function registrar(){
     window.location=("register.html");
 }
 
+
