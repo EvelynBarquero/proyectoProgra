@@ -1,9 +1,9 @@
 'use strict';
 
 const mUsuarios = [
-    [116320103, "*javi123", "Javier","Emanuel","Mendez","Hernandez","Masculino", "12/27/1993",24, 71708724, "admin"],
+    ["116320103", "*javi123", "Javier","Emanuel","Mendez","Hernandez","Masculino", "12/27/1993",24, 71708724, "admin"],
     [],
-    []
+    [],
 ];
 
 function validarUsuario(psCedula,psPassword){
@@ -15,9 +15,6 @@ function validarUsuario(psCedula,psPassword){
             if(mUsuarios[i][1]==psPassword){
                 bUsuario=true;
             }
-        }
-        else{
-            bUsuario=false;
         }
     }
     return bUsuario;
