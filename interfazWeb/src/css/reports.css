@@ -1,6 +1,6 @@
 .sidebar .sidebar-nav {
-    height: 1000px;
-    width: 220px;
+    height: 900px;
+    /* width: 220px; */
 }
 
 .search{
@@ -24,16 +24,22 @@ hover:hover{
 }
 
 
-.fa-trash-o{
-    color: rgb(122, 21, 46);
-}
-
 .selected{
     background-color:#2cd2db; 
     color: white;
     float: right;
     margin-bottom: 1em;
 }
+
+.nav-iconSelected{
+    display: inline-block;
+    width: 1.09375rem;
+    margin: 0 .5rem 0 0;
+    font-size: .875rem;
+    color: white;
+    text-align: center;
+}
+
 .insertText{
     padding: 5px;
     border-radius: 5px;
@@ -49,6 +55,10 @@ hover:hover{
     float: right;
 }
 
+.left{
+    float: left;
+}
+
 #breadcrumbLink{
     color: #5ad3db;
     font-size: 16px;
@@ -61,4 +71,71 @@ hover:hover{
     text-decoration: none;
 }
 
+.bg-info{
+    background-color: #2cd2db !important;
+}
 
+.nav-link:hover{
+    background-color: #2cd2db !important;
+}
+
+.table-striped{
+    color: rgb(75, 75, 75);
+   margin-top: 30px;
+}
+
+.btn-primary{
+    background-color: #2cd2db !important;
+    border-color: #2cd2db;
+}
+
+.btn-primary:hover{
+    background-color: #1aa6ad !important;
+    border-color: #1aa6ad;
+    color: white;
+}
+
+h5{
+    margin-top: 20px;
+}
+
+.btn-light{
+    background-color: #73818f;
+    color: white;
+    border-color: #73818f;
+}
+
+.btn-light:hover{
+    background-color: #2f353a;
+    color: white;
+    border-color: #2f353a;
+}
+
+
+
+/* ejercicios */
+.margin{
+    margin-bottom: 20px;
+}
+
+.marginTop{
+    margin-top: 20px;
+}
+
+.image{
+    width: 60%;
+    height: 60%;
+    margin-right: 10px;
+}
+
+.card{
+    height: 150px;
+}
+
+.text-value-sm {
+    line-height: 20px;
+}
+
+.text-purple{
+    color: purple;
+}
