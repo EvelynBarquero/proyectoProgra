@@ -21,10 +21,18 @@ function iniciarSesion(){
     bUsuario=validarUsuario(sCedula,sPassword);
 
     if(bUsuario==true){
-        window.location=("home.html");
+        construirMenuPricipalCliente();
         console.log("success");
     }else{
         console.log("Error"); /* Aqui hay que poner un error message */
+        inputCedula.classList.add("input-error");
+        swal({
+            type : "error",
+            title: "Informacion invalida",
+            text: "Verifique su Cedula y Contrasena",
+            confirmButtonText: "Entendido"
+
+        })
     }
 }
 
