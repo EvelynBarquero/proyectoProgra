@@ -55,7 +55,8 @@ hover:hover{
 }
 
 .bg-info{
-    background-color: #2cd2db !important;
+    background-color: #b3c6d8!important;
+    border-color: #b3c6d8 !important;
 }
 
 .nav-link:hover{

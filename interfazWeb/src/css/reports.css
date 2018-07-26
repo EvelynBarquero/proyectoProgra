@@ -71,10 +71,6 @@ hover:hover{
     text-decoration: none;
 }
 
-.bg-info{
-    background-color: #2cd2db !important;
-}
-
 .nav-link:hover{
     background-color: #2cd2db !important;
 }
