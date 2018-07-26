@@ -40,7 +40,7 @@
                     <i class="icon-user"></i>
                   </span>
                 </div>
-                <input class="form-control" type="text" placeholder="Primer nombre">
+                <input class="form-control" type="text" placeholder="Primer nombre" id="txtPrimerNombre">
               </div>
 
               
@@ -50,14 +50,14 @@
                       <i class="icon-user"></i>
                     </span>
                   </div>
-                  <input class="form-control" type="text" placeholder="Segundo nombre">
+                  <input class="form-control" type="text" placeholder="Segundo nombre" id="txtSegundoNombre">
                 </div>
 
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
-                <input class="form-control" type="text" placeholder="Cédula">
+                <input class="form-control" type="text  " placeholder="Cédula" id="txtCedula">
               </div>
 
               <div class="input-group mb-3">
@@ -77,7 +77,7 @@
                     </span>
                   </div>
                   
-                  <select class="form-control" type="text" placeholder="Sexo">
+                  <select class="form-control" type="text" placeholder="Sexo" id="txtSexo">
                       <option>Sexo</option>
                       <option>Femenino</option>
                       <option>Masculino</option>
@@ -99,7 +99,7 @@
                           <i class="icon-calendar"></i>
                         </span>
                       </div>
-                      <input class="form-control" type="date" placeholder="Fecha de nacimiento">
+                      <input class="form-control" type="date" placeholder="Fecha de nacimiento" id="txtFecha">
                     </div>
 
                     <div class="input-group mb-3">
@@ -108,7 +108,7 @@
                             <i class="icon-phone"></i>
                           </span>
                         </div>
-                        <input class="form-control" type="tel" placeholder="Teléfono">
+                        <input class="form-control" type="tel" placeholder="Teléfono" id="txtTelefono">
                       </div>
 
                     <!-- <div class="input-group mb-3">
@@ -131,7 +131,7 @@
                     <i class="icon-lock"></i>
                   </span>
                 </div>
-                <input class="form-control" type="password" placeholder="Contrasena">
+                <input class="form-control" type="password" placeholder="Contrasena" id="txtpassword">
               </div>
 
               <div class="input-group mb-3">
@@ -140,10 +140,10 @@
                     <i class="icon-lock"></i>
                   </span>
                 </div>
-                <input class="form-control" type="password" placeholder="Confirmar Contrasena">
+                <input class="form-control" type="password" placeholder="Confirmar Contrasena" id="txtConfirmarPassword">
               </div>
               
-              <button class="btn btn-block btn-primary" type="button">Crear cuenta</button>
+              <button class="btn btn-block btn-primary" type="button" id="btnCrearCuenta">Crear cuenta </button>
             </div>
           </div>
         </div>
@@ -156,5 +156,9 @@
     <script src="node_modules/pace-progress/pace.min.js"></script>
     <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/registrar/servicio_registrar.js"></script>
+    <script src="js/registrar/controlador_registrar.js"></script>
   </body>
 </html>
