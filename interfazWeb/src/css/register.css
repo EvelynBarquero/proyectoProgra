@@ -11,3 +11,7 @@
 select{
     width: 100%;
 }
+
+.input-error{
+    border: 2px solid #B53471;    
+}

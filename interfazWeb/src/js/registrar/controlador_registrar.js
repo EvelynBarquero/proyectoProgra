@@ -62,6 +62,7 @@ function validarInputs(){
     //Valida el Nombre
     if(primerNombre == "" || regexSoloLetras.test(primerNombre)==false){
         bError = true;
+        inputPrimerNombre.classList.add("input-error");
     }else{
         console.log("Nombre Success");
     }
@@ -69,6 +70,7 @@ function validarInputs(){
     //Valida el segundo Nombre
     if(regexSoloLetras.test(segundoNombre)==false){
         bError = true;
+        inputPrimerNombre.classList.add("input-error");
     }else{
         console.log("Segundo nombre Success");
     }
@@ -76,6 +78,7 @@ function validarInputs(){
     //valida el Primer Apellido
     if(primerApellido == "" || regexSoloLetras.test(primerApellido)==false){
         bError = true;
+        inputPrimerNombre.classList.add("input-error");
     }else{
         console.log("Primer apellido Success");
     }
@@ -83,12 +86,12 @@ function validarInputs(){
     //valida el Segundo Apellido
     if(segundoApellido == "" || regexSoloLetras.test(segundoApellido)==false){
         bError = true;
+        inputPrimerNombre.classList.add("input-error");
     }else{
         console.log("Segundo apellido Success");
     }
 
     //validar cedula
-
     
 };
 
