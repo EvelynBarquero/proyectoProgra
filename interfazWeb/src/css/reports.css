@@ -131,6 +131,10 @@ h5{
 .text-value-sm {
     line-height: 20px;
 }
+.input-error{
+    border-color: red;
+    color: #2cd2db;
+}
 
 .text-purple{
     color: purple;
@@ -145,4 +149,21 @@ h5{
     /* background-color: lightblue; */
     /* margin-top: 20px; */
     display: none;
+}
+
+#myForm{
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    /* background-color: lightblue; */
+    /* margin-top: 20px; */
+    display: none;
+}
+
+.imagen_tabla{
+    width: 80%;
+}
+
+.table thead th{
+    width: 30%;
 }
