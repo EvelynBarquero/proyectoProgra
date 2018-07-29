@@ -34,6 +34,9 @@
           <div class="card mx-4">
             <div class="card-body p-4">
               <img id="logo" src="../img/login/blueLogo.png" alt="logo" width="50%">
+              <div class="img_container">
+                <img src="../img/ejercicios/user_placeholder.png" alt="foto" width="50%" height="50%" id="imgFoto">
+              </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
@@ -78,15 +81,15 @@
                 <input class="form-control" type="text  " placeholder="Cédula" id="txtCedula">
               </div>
 
-              <div class="input-group mb-3">
+              <!-- <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="icon-camera"></i>
                     </span>
-                  </div>
-                  <input class="form-control" type="file" name="pic"placeholder="Seleccionar foto">
-                  <input class=" btn btn-outline-primary" type="submit" name="pic"placeholder="Seleccionar">
-                </div>  
+                  </div> -->
+                  <!-- <input class="form-control" type="text" name="pic"placeholder="Seleccionar foto"> -->
+                  <!-- <button class="btn-light form-control" type="button" id="btnSeleccionarImagen">Agregar fotografia</button>
+                </div>     -->
               
               <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -96,9 +99,9 @@
                   </div>
                   
                   <select class="form-control" type="text" placeholder="Sexo" id="txtSexo">
-                      <option>Sexo</option>
-                      <option>Femenino</option>
-                      <option>Masculino</option>
+                      <option value="0">Sexo</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Masculino">Masculino</option>
                     </select>
                 </div>
 
@@ -149,7 +152,7 @@
                     <i class="icon-lock"></i>
                   </span>
                 </div>
-                <input class="form-control" type="password" placeholder="Contrasena" id="txtpassword">
+                <input class="form-control" type="password" placeholder="Contrasena" id="txtPassword">
               </div>
 
               <div class="input-group mb-3">
@@ -160,8 +163,12 @@
                 </div>
                 <input class="form-control" type="password" placeholder="Confirmar Contrasena" id="txtConfirmarPassword">
               </div>
-              
-              <button class="btn btn-block btn-primary" type="button" id="btnCrearCuenta">Crear cuenta </button>
+              <div>
+                <button class="btn-dark form-control" type="button" id="btnSeleccionarImagen">Agregar fotografia</button>
+              </div>
+              <div>
+                <button class="btn btn-block btn-primary" type="button" id="btnCrearCuenta">Crear cuenta </button>
+              </div>
             </div>
           </div>
         </div>
@@ -174,7 +181,13 @@
     <script src="node_modules/pace-progress/pace.min.js"></script>
     <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
-
+    <!-- Scripts para Claudinary -->
+    <script src="js/ejercicios/jquery-3.3.1.js"></script>
+    <script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous">
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <script src="js/ejercicios/servicio_imagen.js"></script>
     <!-- JavaScript -->
     <script src="js/registrar/servicio_registrar.js"></script>
     <script src="js/registrar/controlador_registrar.js"></script>

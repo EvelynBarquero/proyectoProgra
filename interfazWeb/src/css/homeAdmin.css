@@ -95,4 +95,8 @@ h5{
     border-color: #2f353a;
 }
 
-
+.imagen_tabla{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+}

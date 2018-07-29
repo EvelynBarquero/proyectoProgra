@@ -5,6 +5,7 @@ const inputPrimerNombre=document.querySelector("#txtPrimerNombre");
 const inputSegundoNombre=document.querySelector("#txtSegundoNombre");
 const inputCedula=document.querySelector('#txtCedula');
 const inputSexo=document.querySelector("#txtSexo");
+const inputFoto=document.querySelector("#imgFoto");
 const inputFecha=document.querySelector("#txtFecha");
 const inputTelefono=document.querySelector("#txtTelefono");
 let inputPassword=document.querySelector("#txtPassword");
@@ -23,6 +24,7 @@ let primerApellido="";
 let segundoApellido="";
 let cedula="";
 let sexo="";
+let foto=inputFoto.src;
 let fecha= new Date (inputFecha.value);
 let telefono="";
 let password="";
@@ -37,61 +39,116 @@ function crearCuenta(){
     segundoNombre=inputSegundoNombre.value;
     primerApellido=inputPrimerApellido.value;
     segundoApellido=inputSegundoApellido.value;
-    cedula=inputCedula.value;
+    cedula=Number(inputCedula.value);
     sexo=inputSexo.value;
-    fecha= new Date (inputFecha.value);
+    fecha= inputFecha.value;
     telefono=inputTelefono.value;
-    password=inputPassword;
+    password=inputPassword.value;
     confirmacion=inputConfirmarPassword.value;
     edad=0;
 
     // edad=calcularEdad(fecha); //Calcula la edad apartir de la fecha
 
-    let bUsuario=0;
+    let bUsuario=false;
+    let inputsInvalidos=validarInputs();
     //bUsuario=validarUsuario()
-    let test=inputPrimerNombre.value;
-    validarInputs();
-
+    
+    if(inputsInvalidos==true){
+        window.alert("Error message to be added")
+    }
+    else{
+        let nuevoUsuario=[];
+        nuevoUsuario.push(cedula,password,primerNombre,segundoNombre,primerApellido,segundoApellido,fecha,edad,sexo,telefono,foto,"user");
+        console.log(nuevoUsuario);
+        registrarUsuario(nuevoUsuario);
+    }
+    crearMenuUsuario(cedula);
 };
 
 function validarInputs(){
     let bError=false;
     let regexSoloLetras = /^[a-zA-Z]+$/;
-    let regexSoloDigitos = /^[0-9]{1,3}$/;
+    let regexSoloDigitos = /^[0-9]+$/;
 
     //Valida el Nombre
     if(primerNombre == "" || regexSoloLetras.test(primerNombre)==false){
         bError = true;
         inputPrimerNombre.classList.add("input-error");
     }else{
-        console.log("Nombre Success");
+        inputPrimerNombre.classList.remove("input-error");
     }
 
     //Valida el segundo Nombre
     if(regexSoloLetras.test(segundoNombre)==false){
         bError = true;
-        inputPrimerNombre.classList.add("input-error");
+        inputSegundoNombre.classList.add("input-error");
     }else{
-        console.log("Segundo nombre Success");
+        inputSegundoNombre.classList.remove("input-error");
     }
 
     //valida el Primer Apellido
     if(primerApellido == "" || regexSoloLetras.test(primerApellido)==false){
         bError = true;
-        inputPrimerNombre.classList.add("input-error");
+        inputPrimerApellido.classList.add("input-error");
     }else{
-        console.log("Primer apellido Success");
+        inputPrimerApellido.classList.remove("input-error");
     }
 
     //valida el Segundo Apellido
     if(segundoApellido == "" || regexSoloLetras.test(segundoApellido)==false){
         bError = true;
-        inputPrimerNombre.classList.add("input-error");
+        inputSegundoApellido.classList.add("input-error");
     }else{
-        console.log("Segundo apellido Success");
+        inputSegundoApellido.classList.remove("input-error");
+    }
+    
+    //valida la cedula 
+    if(cedula=="" || regexSoloDigitos.test(cedula)==false){
+        bError = true;
+        inputCedula.classList.add("input-error");
+    }else{
+        inputCedula.classList.remove("input-error");
     }
 
-    //validar cedula
-    
+    //valida el sexo 
+    if(sexo=="0"){
+        bError = true;
+        inputSexo.classList.add("input-error");
+    }else{
+        inputSexo.classList.remove("input-error");
+    }
+
+    //valida la fecha - To be fix
+    if(fecha==""){
+        bError = true;
+        inputFecha.classList.add("input-error");
+    }else{
+        inputFecha.classList.remove("input-error");
+    }
+
+    //valida el numero de telefono
+    if(telefono== "" || regexSoloLetras.test(telefono)==true){
+        bError = true;
+        inputTelefono.classList.add("input-error");
+    }else{
+        inputTelefono.classList.remove("input-error");
+    }
+
+    //valida el contrasenna
+    if(password == ""){
+        bError = true;
+        inputPassword.classList.add("input-error");
+    }else{
+        inputPassword.classList.remove("input-error");
+    }
+
+    //valida la confirmacion de contrasenna
+    if(confirmacion!=password){
+        bError = true;
+        inputConfirmarPassword.classList.add("input-error");
+    }else{
+        inputConfirmarPassword.classList.remove("input-error");
+    }
+    return bError;
 };
 
