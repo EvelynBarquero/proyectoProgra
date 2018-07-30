@@ -48,16 +48,36 @@ const limpiarFormulario = () =>{
     inputRepeticiones.value = '';
     imagenFoto.src = '../img/ejercicios/user_placeholder.png';
 };
-
+let sNombre = inputNombre.value;
+let sCategoria = inputCategoria.value;
 
 const obtenerDatosRegistro = () =>{
     let aNuevoUsuario = [];
 
-    // obtener valores;
-    let sNombre = inputNombre.value;
-    let sCategoria = inputCategoria.value;
+    // let sCedula = inputCedula.value;
+    // let sNombre = inputNombre.value;
+    // let sCategoria = inputCategoria.value;
     let sRepeticiones = inputRepeticiones.value;
     let sImagenUrl = imagenFoto.src;
+
+    // Validación de error
+    let bError = false;
+    bError = validar();
+    if(bError==true){
+        swal({
+            type : 'warning',
+            title: 'Campos vacios', //Ver documentación https://cdn.jsdelivr.net/npm/sweetalert2
+            text: 'No se pudo realizar el registro',
+        })
+        // console.log('No se pudo registrar el usuario');
+    }
+    else {
+        swal({
+            type : 'success',
+            title: 'Perfecto', //Ver documentación https://cdn.jsdelivr.net/npm/sweetalert2
+            text: 'Registro exitoso',
+        })
+    }
 
     aNuevoUsuario.push(sImagenUrl, sNombre, sCategoria, sRepeticiones);
     registrarUsuario(aNuevoUsuario);
@@ -66,19 +86,22 @@ const obtenerDatosRegistro = () =>{
 
 };
 
+
 function validar(){
     let bError = false;
     let regexSoloLetras = /^[a-zA-Z]+$/;
-    let regexSoloNumeros = /^[0-9]{1,3}$/; //el uno y 3 son el mínimo y máximo de caracteres
+    // let regexSoloNumeros = /^[0-9]{1,3}$/; //el uno y 3 son el mínimo y máximo de caracteres
     
     //Validación del campo Nombre1
-    if(sNombre == '' || regexSoloLetras.test(sNombre1)==false ){
+    if(sNombre == '' || regexSoloLetras.test(sNombre)==false ){
         bError = true;
-        inputNombre1.classList.add('input-error');
+        inputNombre.classList.add('input-error');
     }
     else{ //dejar el else vacío porque en caso de que el apellido esté incorrecto, pone todo como error
-        inputNombre1.classList.remove('input-error');
+        // inputNombre.classList.remove('input-error');
     }
+   
+    return bError;
 }
 
 mostrarTablaUsuarios();

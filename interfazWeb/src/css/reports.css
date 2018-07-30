@@ -133,7 +133,7 @@ h5{
 }
 .input-error{
     border-color: red;
-    color: #2cd2db;
+    /* color: #2cd2db; */
 }
 
 .text-purple{
@@ -161,9 +161,9 @@ h5{
 }
 
 .imagen_tabla{
-    width: 80%;
+    width: 65%;
 }
 
 .table thead th{
-    width: 30%;
+    width: 29%;
 }

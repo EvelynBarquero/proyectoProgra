@@ -5,10 +5,10 @@ const obtenerListaUsuarios = () =>{
     let mListaUsuarios = JSON.parse(localStorage.getItem('listaUsuariosLS'));
     if(mListaUsuarios == null){
         mListaUsuarios = [
-            ['','Pull ups','Brazos', '14'],
-            ['', 'Squats', 'Pecho', '14'],
-            ['', 'Remo','Espalda', '23'],
-            ['', 'Abductores en máquina','Espalda', '23']
+            ['../img/ejercicios/3.jpg','Pull ups','Brazos', ''],
+            ['../img/ejercicios/squats.jpeg', 'Squats', 'Piernas', ''],
+            ['../img/ejercicios/remo.jpg', 'Remo','Espalda', ''],
+            ['../img/ejercicios/1.jpg', 'Flexiones','Pecho', 'Lagartijas']
         ];
     }
 
