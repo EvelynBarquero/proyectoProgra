@@ -1,0 +1,112 @@
+.sidebar .sidebar-nav {
+    height: 1000px;
+    /* width: 220px; */
+}
+/* 
+.searchInput{
+    margin-top: 1em;
+}
+
+.clearfix{
+    clear: both;
+}
+
+.search{
+    background-color: #20a8d8;
+    
+}
+.search .nav-link .fa-search{
+    color: white;
+}
+
+.generalInfo{
+    background-image: url("../img/enviroment/ambiente.png");
+    background-size: 100%;
+    height: 952px;
+    background-repeat: no-repeat, repeat;
+
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.card{
+    height: 100px;
+}
+
+.breadcrumb{
+    background-color: transparent !important;
+    border-bottom: 2px solid #333;
+}
+
+.desactive{
+    color: gray;
+}
+
+hr{
+    margin: 20px 0;
+}
+
+.number{
+    color: #20a8d8;
+    margin-right: 10px;
+}
+.points{
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    padding: 2px 10px;
+    float: right;
+}
+
+.level{
+    background-color: transparent;
+    border: none;
+    border-bottom: .5px solid lightgrey;
+    width: 50%;
+    margin-bottom: 10px;
+    color: #696969;
+}
+
+.margin{
+    margin-bottom: 20px;
+}
+
+
+
+.colorSelect {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: transparent;
+}
+
+
+
+.switch{
+    margin-left: 20px;
+}
+
+.nav-link:hover {
+    color: #2cd2db !important;
+    background-color: transparent !important;
+} */
+
+.tab-content {
+    width: 86%;
+    height: 100% !important;
+    margin-top: -1px;
+    background: #fff;
+    border: 1px solid #c8ced3;
+    color: #696969;
+}
+
+.pestañas:hover{
+    color: white !important;
+    background-color: transparent !important;
+}

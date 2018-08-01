@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Configuración</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+  <!-- Links -->
+  <link href="css/reset.css" rel="stylesheet">
+
+
+  <!-- Fontawesome -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Coreui -->
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
+
+  <!-- Icons-->
+  <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Link CSS -->
+  <link href="css/config.css" rel="stylesheet">
+  <link href="css/reports.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body class="sidebar-lg-show">
+
+    <header class="app-header navbar bar">
+      <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img id="logo" src="../img/login/blueLogo.png" alt="logo" width="60%">
+      </a>
+      <ul class="nav navbar-nav ml-auto">
+  
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-lock"></i> Logout</a>
+          </div>
+        </li>
+      </ul>
+  
+    </header>
+  
+    <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" onClick="location.href='homeAdmin.html'">
+                <i class="nav-icon icon-chart"></i> Clientes
+                <span class="badge badge-primary">info</span>
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" onClick="location.href='ejercicios.html'">
+                <i class="nav-iconSelected icon-vector"></i> Ejercicios
+              </a>
+            </li>
+
+            <li class="nav-item selected">
+                <a class="nav-link" onClick="location.href='pagMediciones.html'">
+                  <i class="nav-icon icon-equalizer"></i> Mediciones
+                </a>
+              </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" onClick="location.href='adminInstructores.html'">
+                <i class="nav-icon icon-people"></i> Instructores
+              </a>
+            </li>
+
+
+          </ul>
+        </nav>
+      </div>
+
+    <div class="col-md-12">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link pestañas" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="false">
+            <i class="icon-location-pin"></i> IMC</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pestañas active show" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="true">
+            <i class="icon-trophy"></i> Perimetros </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pestañas" data-toggle="tab" href="#messages3" role="tab" aria-controls="messages" aria-selected="false">
+            <i class="icon-bell"></i> Notificaciones</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link pestañas" data-toggle="tab" href="#account" role="tab" aria-controls="messages" aria-selected="false">
+            <i class="icon-user"></i> Cuentas</a>
+        </li>
+      </ul>
+
+
+
+      <div class="tab-content">
+        <div class="tab-pane" id="home3" role="tabpanel">
+
+          <div class="container-fluid">
+            <button type="button" class="btn btn-primary right">Guardar</button>
+            <div class="row">
+              <div class="col-lg-4">
+                <h4 class="margin">Tipos de reporte</h4>
+                <div>
+                  <button type="button" class="btn btn-outline-primary margin">Agregar tipo de reporte</button>
+                </div>
+                <div>
+                  <input class="colorSelect" type="color" value="#6ba9a7">
+                  <input class="level" type="text" value="Daño de agua">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#277c93">
+                  <input class="level" type="text" placeholder="Medio" value="Señal de tránsito">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#1d4353">
+                  <input class="level" type="text" placeholder="Avanzado" value="Acera bloqueada">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#889989">
+                  <input class="level" type="text" placeholder="Avanzado" value="Hueco">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#518761">
+                  <input class="level" type="text" placeholder="Avanzado" value="Malos olores">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#b0be4c">
+                  <input class="level" type="text" placeholder="Avanzado" value="Basura">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#facc61">
+                  <input class="level" type="text" placeholder="Avanzado" value="Otro">
+                </div>
+
+                <div>
+                  <input class="colorSelect" type="color" value="#894e45">
+                  <input class="level" type="text" placeholder="Avanzado" value="Plaga">
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="tab-pane active show" id="profile3" role="tabpanel">
+
+          <div class="container-fluid">
+            <button type="button" class="btn btn-primary right">Guardar</button>
+            <div class="gaming">
+              <h4 class="margin">Puntuación</h4>
+              <div class="row">
+                <div class="col-lg-4">
+
+                  <div>
+                    <label for="like">Dar like a un reporte</label>
+                    <input type="number" class="points" id="like" value="300">
+                  </div>
+
+                  <div>
+                    <label for="like">Crear un reporte</label>
+                    <input type="number" class="points" id="like" value="300">
+                  </div>
+
+                  <div>
+                    <label for="like">Comentar un reporte</label>
+                    <input type="number" class="points" id="like" value="300">
+                  </div>
+                  <hr>
+                  <div class="clearfix"></div>
+
+                  <h4 class="margin">Niveles</h4>
+                  <div>
+                    <button type="button" class="btn btn-outline-primary margin">Agregar nivel</button>
+                  </div>
+                  <div>
+                    <span class="number">1 </span>
+                    <input class="level" type="text" placeholder="Básico">
+                    <input type="number" class="points" id="like" value="300">
+                  </div>
+
+                  <div>
+                    <span class="number">2 </span>
+                    <input class="level" type="text" placeholder="Medio">
+                    <input type="number" class="points" id="like" value="300">
+                  </div>
+
+                  <div>
+                    <span class="number">3 </span>
+                    <input class="level" type="text" placeholder="Avanzado">
+                    <input type="number" class="points" id="like" value="300">
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="tab-pane" id="messages3" role="tabpanel">
+          <div class="container-fluid">
+            <button type="button" class="btn btn-primary right">Guardar</button>
+            <h4 class="margin">Configuración de notificaciones</h4>
+            <div class="row">
+              <div class="col-lg-3">
+                <div>
+                  <p class="left"> Video llamadas agendadas </p>
+                  <label class="switch switch-pill switch-outline-primary-alt right">
+                    <input type="checkbox" class="switch-input " checked>
+                    <span class="switch-slider"></span>
+                  </label>
+
+                </div>
+
+                <div>
+                  <p class="left"> Mensajes de reportes </p>
+                  <label class="switch switch-pill switch-outline-primary-alt right">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-slider "></span>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="left"> Comentarios de reportes </p>
+                  <label class="switch switch-pill switch-outline-primary-alt right">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="left"> Likes de reportes </p>
+                  <label class="switch switch-pill switch-outline-primary-alt right">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="left"> Nuevos reportes creados </p>
+                  <label class="switch switch-pill switch-outline-primary-alt right">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+                <div>
+                  <p class="left">Mensajes del chat </p>
+                  <label class="switch switch-pill switch-outline-primary-alt right">
+                    <input type="checkbox" class="switch-input" checked>
+                    <span class="switch-slider"></span>
+                  </label>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="tab-pane" id="account" role="tabpanel">
+          <div class="container-fluid">
+            <button type="button" class="btn btn-primary right">Guardar</button>
+            <h4 class="margin">Configuración de cuentas</h4>
+            <button type="button" class="btn btn-outline-primary">Agregar usuario</button>
+
+            <div class="input-group searchInput mb-3 margin">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="icon-magnifier"></i>
+                </span>
+              </div>
+              <input class="form-control" type="text" placeholder="Buscar usuario">
+
+              <div class="input-group-append">
+                <button type="button" class="btn btn-outline-secondary">Buscar</button>
+              </div>
+            </div>
+
+            <div class="">
+              <div class="">
+                
+                  
+                  <div class="">
+                    <table class="table table-responsive-sm">
+                      <thead>
+                        <tr>
+                          <th>Usuario</th>
+                          <th>Fecha de registro</th>
+                          <th>Rol</th>
+                          <th>Estado</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Samppa Nori</td>
+                          <td>2012/01/01</td>
+                          <td>Member</td>
+                          <td>
+                            <span class="badge badge-success">Active</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Estavan Lykos</td>
+                          <td>2012/02/01</td>
+                          <td>Staff</td>
+                          <td>
+                            <span class="badge badge-danger">Banned</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Chetan Mohamed</td>
+                          <td>2012/02/01</td>
+                          <td>Admin</td>
+                          <td>
+                            <span class="badge badge-secondary">Inactive</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Derick Maximinus</td>
+                          <td>2012/03/01</td>
+                          <td>Member</td>
+                          <td>
+                            <span class="badge badge-warning">Pending</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Friderik Dávid</td>
+                          <td>2012/01/21</td>
+                          <td>Staff</td>
+                          <td>
+                            <span class="badge badge-success">Active</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#">Prev</a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</body>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+  crossorigin="anonymous"></script>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+  crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+<script src="js/chart.js"></script>
+
+
+</body>
+
+</html>
