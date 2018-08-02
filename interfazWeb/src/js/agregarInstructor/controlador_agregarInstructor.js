@@ -1,7 +1,8 @@
 'use strict';
 
 
-const inputImagen = document.querySelector('#btnSeleccionarImagen');
+// const inputImagen = document.querySelector('#btnSeleccionarImagen');
+const imagenFoto = document.querySelector('#imgFoto');
 const inputNombre = document.querySelector('#txtNombre');
 const inputSegundoNombre = document.querySelector('#txtSegundoNombre');
 const inputPrimerApellido = document.querySelector ('#txtPrimerApellido');
@@ -15,6 +16,38 @@ const inputUsuario = document.querySelector ('#txtUsuario');
 const inputContrasenna = document.querySelector ('#txtContrasenna');
 
 const botonRegistrar = document.querySelector('#btnRegistrar');
+const botonActualizar = document.querySelector('#btnActualizar');
+
+botonActualizar.hidden = true;
+
+function obtenerInstructorPorCedula (){
+    botonRegistrar.hidden = true;
+    botonActualizar.hidden = false;
+
+    let sCedula = this.dataset.cedula;
+    let instructor = buscarInstructorPorCedula(sCedula);
+
+    inputNombre.value = instructor[1];
+    inputSegundoNombre.value = instructor[2];
+    inputPrimerApellido.value = instructor[3];
+    inputSegundoApellido.value = instructor[4];
+    inputCedula.value = instructor[5];
+    inputCedula.disabled = true;
+
+    inputFechaNacimiento.value = instructor[6];
+    inputEdad.value = instructor[7];
+    inputSexo.option = instructor[8];
+    inputTelefono.value = instructor[9];
+    inputUsuario.value = instructor[10];
+    inputContrasenna.value = instructor[11];
+
+    if(instructor[0] == ''){
+        imagenFoto.src = 'img/user_placeholder.png';
+    }else{
+        imagenFoto.src = instructor[0];
+    }
+
+};
 
 const mostrarTablaInstructores = () => {
     let mListaInstructores = obtenerListaInstructores();
@@ -24,7 +57,7 @@ const mostrarTablaInstructores = () => {
     for (let i = 0; i < mListaInstructores.length; i++) {
         let fila = tbody.insertRow();
 
-        // let celdaFoto = fila.insertCell();
+        let celdaFoto = fila.insertCell();
         let celdaNombre = fila.insertCell();
         let celdaSegundoNombre = fila.insertCell();
         let celdaPrimerApellido = fila.insertCell();
@@ -36,6 +69,7 @@ const mostrarTablaInstructores = () => {
         let celdaTelefono = fila.insertCell();
         let celdaUsuario = fila.insertCell();
         let celdaContrasenna = fila.insertCell();
+        let celdaConfiguracion = fila.insertCell();
 
        
 
@@ -52,8 +86,9 @@ const mostrarTablaInstructores = () => {
         celdaUsuario.innerHTML = mListaInstructores[i][10];
         celdaContrasenna.innerHTML = mListaInstructores[i][11];
 
+       
         let imagen = document.createElement('img');
-        // imagen.classList.add('imagen_tabla');
+        imagen.classList.add('imagen_tabla');
 
         let imagenUrl = mListaInstructores[i][0];
 
@@ -63,20 +98,31 @@ const mostrarTablaInstructores = () => {
 
         imagen.src = imagenUrl;
 
-        // celdaFoto.appendChild(imagen);
+        celdaFoto.appendChild(imagen);
+
+        let botonIconoEditar = document.createElement('a');
+        botonIconoEditar.classList.add('fa');
+        botonIconoEditar.classList.add('fa-edit');
+        botonIconoEditar.dataset.cedula = mListaInstructores[i][0];
+
+        botonIconoEditar.addEventListener('click' , obtenerInstructorPorCedula);
+        botonIconoEditar .addEventListener('click' , show);
+
+        celdaConfiguracion.appendChild(botonIconoEditar);
     };
 };
 
 
 const limpiarFormulario = () => {
-    inputImagen.src = '../img/ejercicios/user_placeholder.png';
+    imagenFoto.src = '../img/ejercicios/user_placeholder.png';
     inputNombre.value = '';
     inputSegundoNombre.value = '';
     inputPrimerApellido.value = '';
     inputSegundoApellido.value = '';
     inputCedula.value = '';
+    inputEdad.value = 0;
     inputFechaNacimiento.value = '';
-    inputSexo.value = '';
+    inputSexo.option = '';
     inputTelefono.value = '';
     inputUsuario.value = '';
     inputContrasenna.value = '';
@@ -87,30 +133,67 @@ const limpiarFormulario = () => {
 const obtenerDatosRegistro = () => {
     let aNuevoInstructor = [];
 
-    let iFoto = inputImagen.src;
+    let sImagenUrl = imagenFoto.src;
     let sNombre = inputNombre.value;
     let sSegundoNombre = inputSegundoNombre.value;
     let sPrimerApellido = inputPrimerApellido.value;
     let sSegundoApellido = inputSegundoApellido.value;
     let sCedula = inputCedula.value;
     let dFechaNacimiento = inputFechaNacimiento.value;
+    let nEdad = inputEdad.value;
     let sSexo = inputSexo.value;
     let nTelefono = inputTelefono.value
     let sUsuario = inputUsuario.value
     let sContrasenna = inputContrasenna.value
 
-    aNuevoInstructor.push(iFoto, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, sSexo, nTelefono, sUsuario, sContrasenna);
+    aNuevoInstructor.push(sImagenUrl, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna);
     registrarInstructor(aNuevoInstructor);
     mostrarTablaInstructores();
     limpiarFormulario();
+    
+};
+
+
+const obtenerDatosActualizar = () =>{
+    let aUsuarioModificado = [];
+
+    let sImagenUrl = imagenFoto.src;
+    let sNombre = inputNombre.value;
+    let sSegundoNombre = inputSegundoNombre.value;
+    let sPrimerApellido = inputPrimerApellido.value;
+    let sSegundoApellido = inputSegundoApellido.value;
+    let sCedula = inputCedula.value;
+    let dFechaNacimiento = inputFechaNacimiento.value;
+    let nEdad = Number(inputEdad.value);
+    let sSexo = inputSexo.value;
+    let nTelefono = inputTelefono.value
+    let sUsuario = inputUsuario.value
+    let sContrasenna = inputContrasenna.value
+
+
+    aUsuarioModificado.push(sImagenUrl, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna);
+    
+    modificarUsuario(aUsuarioModificado);
+    mostrarTablaInstructores();
+    limpiarFormulario();
+    botonActualizar.hidden = true;
+    botonRegistrar.hidden = false;
+    inputCedula.disabled = false;
 
 };
 
 
 mostrarTablaInstructores();
 botonRegistrar.addEventListener('click', obtenerDatosRegistro);
+botonActualizar.addEventListener('click', obtenerDatosActualizar);
+
+botonRegistrar .addEventListener('click' , hide);
+botonActualizar .addEventListener('click' , hide);
 
 
+
+
+// --------------------------------------------------
 
 function show() {
     var x = document.getElementById("myDIV");
@@ -118,6 +201,15 @@ function show() {
         x.style.display = "none";
     } else {
         x.style.display = "block";
+    }
+}
+
+function hide() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
 }
 
