@@ -19,19 +19,19 @@ function obtenerEjercicioPorNombre (){
     let sNombre = this.dataset.nombre;
     let ejercicio = buscarEjercicioPorNombre(sNombre);
 
-    
-    inputNombre.value  = ejercicio[1];
-    inputCategoria.value = ejercicio[2];
-    inputNombreOpcional.valu = ejercicio[3];
-
-    inputNombre.value = ejercicio[1];
+    inputNombre.value = ejercicio[0];
     inputNombre.disabled = true;
+    // inputNombre.value  = ejercicio[1];
+    inputCategoria.value = ejercicio[1];
+    inputNombreOpcional.value = ejercicio[2];
+
+    
 
 
-    if(ejercicio[0] == ''){
-        imagenFoto.src = 'img/user_placeholder.png';
+    if(ejercicio[3] == ''){
+        imagenFoto.src = '../img/user_placeholder.png';
     }else{
-        imagenFoto.src = ejercicio[0];
+        imagenFoto.src = ejercicio[3];
     }
 
 };
@@ -50,14 +50,14 @@ const mostrarTablaUsuarios = () => {
         let celdaNombreOpcional = fila.insertCell();
         let celdaConfiguracion = fila.insertCell();
 
-        celdaNombre.innerHTML = mListaUsuarios[i][1];
-        celdaCategoria.innerHTML = mListaUsuarios[i][2];
-        celdaNombreOpcional.innerHTML = mListaUsuarios[i][3];
+        celdaNombre.innerHTML = mListaUsuarios[i][0];
+        celdaCategoria.innerHTML = mListaUsuarios[i][1];
+        celdaNombreOpcional.innerHTML = mListaUsuarios[i][2];
 
         let imagen = document.createElement('img');
         imagen.classList.add('imagen_tabla');
 
-        let imagenUrl = mListaUsuarios[i][0];
+        let imagenUrl = mListaUsuarios[i][3];
 
         if (imagenUrl == '') {
             imagenUrl = '../img/ejercicios/user_placeholder.png';
@@ -71,7 +71,7 @@ const mostrarTablaUsuarios = () => {
         let botonIconoEditar = document.createElement('a');
         botonIconoEditar.classList.add('fa');
         botonIconoEditar.classList.add('fa-edit');
-        botonIconoEditar.dataset.nombre = mListaUsuarios[i][1];
+        botonIconoEditar.dataset.nombre = mListaUsuarios[i][0];
 
         botonIconoEditar.addEventListener('click' , obtenerEjercicioPorNombre);
         botonIconoEditar .addEventListener('click' , show);
@@ -100,7 +100,7 @@ const obtenerDatosRegistro = () => {
     let sImagenUrl = imagenFoto.src;
 
 
-    aNuevoEjercicio.push(sImagenUrl, sNombre, sCategoria, sNombreOpcional);
+    aNuevoEjercicio.push(sNombre, sCategoria, sNombreOpcional, sImagenUrl);
     registrarUsuario(aNuevoEjercicio);
     mostrarTablaUsuarios();
     limpiarFormulario();
@@ -118,10 +118,10 @@ const obtenerDatosActualizar = () =>{
     let sNombreOpcional = inputNombreOpcional.value;
 
 
-    aEjercicioModificado.push(sImagenUrl, sNombre,sCategoria, sNombreOpcional);
+    aEjercicioModificado.push(sNombre,sCategoria, sNombreOpcional, sImagenUrl);
     
     modificarEjercicio(aEjercicioModificado);
-    mostrarTablaInstructores();
+    mostrarTablaUsuarios();
     limpiarFormulario();
     botonActualizar.hidden = true;
     botonRegistrar.hidden = false;
@@ -132,6 +132,7 @@ const obtenerDatosActualizar = () =>{
 
 mostrarTablaUsuarios();
 botonRegistrar.addEventListener('click', obtenerDatosRegistro);
+botonActualizar.addEventListener('click', obtenerDatosActualizar);
 
 
 // --------------------------------------------
