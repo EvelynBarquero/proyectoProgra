@@ -37,7 +37,7 @@ function iniciarSesion(){
 }
 
 function registrar(){
-    window.location=("register.html");
+    window.location=("register_Admin.html");
 }
 
 

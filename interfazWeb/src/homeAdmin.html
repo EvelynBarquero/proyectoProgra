@@ -147,19 +147,20 @@
         </div>
 
         <h5>Tabla de clientes</h5>
-        <button class="btn btn-primary" type="button">Añadir cliente</button>
-        <table class="table table-striped table-responsive-sm">
+        <button id="btnRegistrar" class="btn btn-primary" type="button">Añadir cliente</button>
+        <table id="tblUsuarios" class="table table-striped table-responsive-sm">
           <thead>
             <tr>
-              <th scope="row">#</th>
-              <th scope="col">Nombre</th>
+              <th Scope="col">Foto</th>
               <th scope="col">Cédula</th>
-              <th scope="col">Edad</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">2do Nombre</th>
+              <th scope="col">1er Apellido</th>
+              <th scope="col">2do Apellido</th>
               <th scope="col">Sexo</th>
+              <th scope="col">Edad</th>
               <th scope="col">Nacimiento</th>
               <th scope="col">Teléfono</th>
-              <!-- <th scope="col">Estado</th> -->
-              <th scope="col">Editar</th>
             </tr>
           </thead>
           <tbody>
@@ -244,6 +245,10 @@
   crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
 
+<!-- Javascript -->
+<script src="js/registrar/servicio_registrar.js"></script>
+<script src="js/clientes_admin/servicio_clientes_admin.js"></script>
+<script src="js/clientes_admin/controlador_clientes_admin.js"></script>
 
 </body>
 
