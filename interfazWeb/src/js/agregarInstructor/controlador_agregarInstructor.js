@@ -1,6 +1,5 @@
 'use strict';
 
-
 // const inputImagen = document.querySelector('#btnSeleccionarImagen');
 const imagenFoto = document.querySelector('#imgFoto');
 const inputNombre = document.querySelector('#txtNombre');
@@ -212,5 +211,7 @@ function hide() {
         x.style.display = "none";
     }
 }
+
+
 
 

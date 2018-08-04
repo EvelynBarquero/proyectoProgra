@@ -24,11 +24,27 @@ const registrarUsuario = (paNuevoUsuario) =>{
 }; 
 
 
-function verForm(){
-    var x = document.getElementById("myForm");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
+
+const buscarEjercicioPorNombre = (psNombre) =>{
+    let mListaUsuarios = obtenerListaUsuarios();
+    let ejercicioEncontrado = [];
+    for(let i = 0; i < mListaUsuarios.length; i++ ){
+        if(mListaUsuarios[i][0] == psNombre){
+            ejercicioEncontrado = mListaUsuarios[i];
+        }
+    };
+    return ejercicioEncontrado;
+};
+
+// pUsuarioModificado -> arreglo
+const modificarUsuario = (pEjercicioModificado) =>{
+    let mListaUsuarios = obtenerListaUsuarios();
+    for(let i = 0 ; i < mListaUsuarios.length; i++ ){
+        if(mListaUsuarios[i][0] == pEjercicioModificado[0]){
+            mListaUsuarios[i] = pEjercicioModificado;
+        }
     }
-}
+    localStorage.setItem('listaUsuariosLS', JSON.stringify(mListaUsuarios));
+
+};
+

@@ -88,7 +88,7 @@
     <div class="container-fluid">
       <!-- Cards -->
       <h4 class="margin marginTop">Ejercicios</h4>
-      <button class="btn btn-primary margin" type="button" onclick="verForm()">Añadir ejercicio</button>
+      <button class="btn btn-primary margin" type="button" onclick="show()">Añadir ejercicio</button>
 
       <!-- ver Formulario -->
       <div id="myForm" class="col-lg-12">
@@ -142,7 +142,8 @@
 
 
             <div class="input-group mb-3">
-              <button class="btn-primary form-control" type="button" id="btnRegistrar">Agregar </button>
+              <button class="btn-primary form-control" type="button" onclick="hide()" id="btnRegistrar">Agregar </button>
+              <button type="button" id="btnActualizar" class="btn btn-outline-dark right" onclick="hide()">Actualizar instructor</button>
             </div>
           </div>
 
@@ -165,12 +166,14 @@
               <th>Nombre</th>
               <th>Categoría</th>
               <th>Nombre opcional</th>
+              <th>Editar</th>
 
             </tr>
 
             <td colspan="4">
               <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
             </td>
+
           </thead>
           <tbody>
 
@@ -226,7 +229,7 @@
 <!--Fin: Scripts para cloudinary -->
 
 <script src="js/ejercicios/servicio_usuarios.js"></script>
-<script src="js/ejercicios/test.js"></script>
+<script src="js/ejercicios/filter.js"></script>
 <script src="js/ejercicios/controlador_usuarios.js"></script>
 
 

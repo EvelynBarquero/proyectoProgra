@@ -8,6 +8,33 @@ const inputCategoria = document.querySelector('#sltCategoria');
 
 
 const botonRegistrar = document.querySelector('#btnRegistrar');
+const botonActualizar = document.querySelector('#btnActualizar');
+
+botonActualizar.hidden = true;
+
+function obtenerEjercicioPorNombre (){
+    botonRegistrar.hidden = true;
+    botonActualizar.hidden = false;
+
+    let sNombre = this.dataset.nombre;
+    let ejercicio = buscarEjercicioPorNombre(sNombre);
+
+    
+    inputNombre.value  = ejercicio[1];
+    inputCategoria.value = ejercicio[2];
+    inputNombreOpcional.valu = ejercicio[3];
+
+    inputNombre.value = ejercicio[1];
+    inputNombre.disabled = true;
+
+
+    if(ejercicio[0] == ''){
+        imagenFoto.src = 'img/user_placeholder.png';
+    }else{
+        imagenFoto.src = ejercicio[0];
+    }
+
+};
 
 const mostrarTablaUsuarios = () => {
     let mListaUsuarios = obtenerListaUsuarios();
@@ -21,6 +48,7 @@ const mostrarTablaUsuarios = () => {
         let celdaNombre = fila.insertCell();
         let celdaCategoria = fila.insertCell();
         let celdaNombreOpcional = fila.insertCell();
+        let celdaConfiguracion = fila.insertCell();
 
         celdaNombre.innerHTML = mListaUsuarios[i][1];
         celdaCategoria.innerHTML = mListaUsuarios[i][2];
@@ -38,6 +66,17 @@ const mostrarTablaUsuarios = () => {
         imagen.src = imagenUrl;
 
         celdaFoto.appendChild(imagen);
+
+
+        let botonIconoEditar = document.createElement('a');
+        botonIconoEditar.classList.add('fa');
+        botonIconoEditar.classList.add('fa-edit');
+        botonIconoEditar.dataset.nombre = mListaUsuarios[i][1];
+
+        botonIconoEditar.addEventListener('click' , obtenerEjercicioPorNombre);
+        botonIconoEditar .addEventListener('click' , show);
+
+        celdaConfiguracion.appendChild(botonIconoEditar);
     };
 };
 
@@ -50,60 +89,66 @@ const limpiarFormulario = () => {
 };
 
 
-let sNombre = inputNombre.value;
-let sCategoria = inputCategoria.value;
+
 
 const obtenerDatosRegistro = () => {
-    let aNuevoUsuario = [];
+    let aNuevoEjercicio = [];
 
-    // let sCedula = inputCedula.value;
-    // let sNombre = inputNombre.value;
-    // let sCategoria = inputCategoria.value;
+    let sNombre = inputNombre.value;
+    let sCategoria = inputCategoria.value;
     let sNombreOpcional = inputNombreOpcional.value;
     let sImagenUrl = imagenFoto.src;
 
-    // Validación de error
-    let bError = false;
-    bError = validar();
-    if (bError == true) {
-        swal({
-            type: 'warning',
-            title: 'Campos vacios', //Ver documentación https://cdn.jsdelivr.net/npm/sweetalert2
-            text: 'No se pudo realizar el registro',
-        })
-        // console.log('No se pudo registrar el usuario');
-    } else {
-        swal({
-            type: 'success',
-            title: 'Perfecto', //Ver documentación https://cdn.jsdelivr.net/npm/sweetalert2
-            text: 'Registro exitoso',
-        })
-    }
 
-    aNuevoUsuario.push(sImagenUrl, sNombre, sCategoria, sNombreOpcional);
-    registrarUsuario(aNuevoUsuario);
+    aNuevoEjercicio.push(sImagenUrl, sNombre, sCategoria, sNombreOpcional);
+    registrarUsuario(aNuevoEjercicio);
     mostrarTablaUsuarios();
     limpiarFormulario();
 
 };
 
-// botonRegistrar.addEventListener('click', obtenerDatosRegistro);
 
-function validar() {
-    let bError = false;
-    let regexSoloLetras = /^[a-zA-Z]+$/;
-    // let regexSoloNumeros = /^[0-9]{1,3}$/; //el uno y 3 son el mínimo y máximo de caracteres
 
-    //Validación del campo Nombre1
-    if (sNombre == '' || regexSoloLetras.test(sNombre) == false) {
-        bError = true;
-        inputNombre.classList.add('input-error');
-    } else { //dejar el else vacío porque en caso de que el apellido esté incorrecto, pone todo como error
-        // inputNombre.classList.remove('input-error');
-    }
+const obtenerDatosActualizar = () =>{
+    let aEjercicioModificado = [];
 
-    return bError;
-}
+    let sImagenUrl = imagenFoto.src;
+    let sNombre  = inputNombre.value;
+    let sCategoria = inputCategoria.value;
+    let sNombreOpcional = inputNombreOpcional.value;
+
+
+    aEjercicioModificado.push(sImagenUrl, sNombre,sCategoria, sNombreOpcional);
+    
+    modificarEjercicio(aEjercicioModificado);
+    mostrarTablaInstructores();
+    limpiarFormulario();
+    botonActualizar.hidden = true;
+    botonRegistrar.hidden = false;
+    inputNombre.disabled = false;
+
+};
+
 
 mostrarTablaUsuarios();
 botonRegistrar.addEventListener('click', obtenerDatosRegistro);
+
+
+// --------------------------------------------
+function show() {
+    var x = document.getElementById("myForm");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+function hide() {
+    var x = document.getElementById("myForm");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
