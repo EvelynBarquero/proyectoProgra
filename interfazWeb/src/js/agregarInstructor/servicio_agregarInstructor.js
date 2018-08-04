@@ -5,7 +5,7 @@ const obtenerListaInstructores = () =>{
     let mListaInstructores = JSON.parse(localStorage.getItem('listaInstructoresLS'));
     if(mListaInstructores == null){
         mListaInstructores = [
-            ['../img/ejercicios/3.jpg','Frank','Alberto', 'Rojas','Quesada','2397568','1992-06-22', '22', 'Masculino','87862325','fAlberto','alberto2018']
+            ['Frank','Alberto', 'Rojas','Quesada','2397568','1992-06-22', '22', 'Masculino','87862325','fAlberto','alberto2018', '../img/ejercicios/3.jpg']
         ];
     }
 

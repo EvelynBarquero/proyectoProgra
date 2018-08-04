@@ -26,24 +26,24 @@ function obtenerInstructorPorCedula (){
     let sCedula = this.dataset.cedula;
     let instructor = buscarInstructorPorCedula(sCedula);
 
-    inputNombre.value = instructor[1];
-    inputSegundoNombre.value = instructor[2];
-    inputPrimerApellido.value = instructor[3];
-    inputSegundoApellido.value = instructor[4];
-    inputCedula.value = instructor[5];
+    inputNombre.value = instructor[0];
+    inputSegundoNombre.value = instructor[1];
+    inputPrimerApellido.value = instructor[2];
+    inputSegundoApellido.value = instructor[3];
+    inputCedula.value = instructor[4];
     inputCedula.disabled = true;
 
-    inputFechaNacimiento.value = instructor[6];
-    inputEdad.value = instructor[7];
-    inputSexo.option = instructor[8];
-    inputTelefono.value = instructor[9];
-    inputUsuario.value = instructor[10];
-    inputContrasenna.value = instructor[11];
+    inputFechaNacimiento.value = instructor[5];
+    inputEdad.value = instructor[6];
+    inputSexo.option = instructor[7];
+    inputTelefono.value = instructor[8];
+    inputUsuario.value = instructor[9];
+    inputContrasenna.value = instructor[10];
 
-    if(instructor[0] == ''){
+    if(instructor[11] == ''){
         imagenFoto.src = 'img/user_placeholder.png';
     }else{
-        imagenFoto.src = instructor[0];
+        imagenFoto.src = instructor[11];
     }
 
 };
@@ -73,23 +73,23 @@ const mostrarTablaInstructores = () => {
        
 
         // celdaFoto.innerHTML = mListaInstructores[i][0];
-        celdaNombre.innerHTML = mListaInstructores[i][1];
-        celdaSegundoNombre.innerHTML = mListaInstructores[i][2];
-        celdaPrimerApellido.innerHTML = mListaInstructores[i][3];
-        celdaSegundoApellido.innerHTML = mListaInstructores[i][4];
-        celdaCedula.innerHTML = mListaInstructores[i][5];
-        celdaFechaNacimiento.innerHTML = mListaInstructores[i][6];
-        celdaEdad.innerHTML = mListaInstructores[i][7];
-        celdaSexo.innerHTML = mListaInstructores[i][8];
-        celdaTelefono.innerHTML = mListaInstructores[i][9];
-        celdaUsuario.innerHTML = mListaInstructores[i][10];
-        celdaContrasenna.innerHTML = mListaInstructores[i][11];
+        celdaNombre.innerHTML = mListaInstructores[i][0];
+        celdaSegundoNombre.innerHTML = mListaInstructores[i][1];
+        celdaPrimerApellido.innerHTML = mListaInstructores[i][2];
+        celdaSegundoApellido.innerHTML = mListaInstructores[i][3];
+        celdaCedula.innerHTML = mListaInstructores[i][4];
+        celdaFechaNacimiento.innerHTML = mListaInstructores[i][5];
+        celdaEdad.innerHTML = mListaInstructores[i][6];
+        celdaSexo.innerHTML = mListaInstructores[i][7];
+        celdaTelefono.innerHTML = mListaInstructores[i][8];
+        celdaUsuario.innerHTML = mListaInstructores[i][9];
+        celdaContrasenna.innerHTML = mListaInstructores[i][10];
 
        
         let imagen = document.createElement('img');
         imagen.classList.add('imagen_tabla');
 
-        let imagenUrl = mListaInstructores[i][0];
+        let imagenUrl = mListaInstructores[i][11];
 
         if (imagenUrl == '') {
             imagenUrl = '../img/ejercicios/user_placeholder.png';
@@ -145,7 +145,7 @@ const obtenerDatosRegistro = () => {
     let sUsuario = inputUsuario.value
     let sContrasenna = inputContrasenna.value
 
-    aNuevoInstructor.push(sImagenUrl, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna);
+    aNuevoInstructor.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna, sImagenUrl);
     registrarInstructor(aNuevoInstructor);
     mostrarTablaInstructores();
     limpiarFormulario();
@@ -170,7 +170,7 @@ const obtenerDatosActualizar = () =>{
     let sContrasenna = inputContrasenna.value
 
 
-    aUsuarioModificado.push(sImagenUrl, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna);
+    aUsuarioModificado.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna, sImagenUrl );
     
     modificarUsuario(aUsuarioModificado);
     mostrarTablaInstructores();
