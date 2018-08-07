@@ -166,3 +166,9 @@ h5{
 .table thead th{
     width: 12%;
 }
+.floatleft{
+    float: left;
+}
+.fa{
+    margin-right: 6px;
+}

@@ -36,23 +36,21 @@ function obtenerClientePorCedula (){
     let sCedula = this.dataset.cedula;
     let cliente = buscarClientePorCedula(sCedula);
 
-    inputNombre.value = cliente[1];
-    inputSegundoNombre.value = cliente[2];
-    inputPrimerApellido.value = cliente[3];
-    inputSegundoApellido.value = cliente[4];
-    inputCedula.value = cliente[5];
+    inputNombre.value = cliente[2];
+    inputSegundoNombre.value = cliente[3];
+    inputPrimerApellido.value = cliente[4];
+    inputSegundoApellido.value = cliente[5];
+    inputCedula.value = cliente[0];
     inputCedula.disabled = true;
-
     inputFechaNacimiento.value = cliente[6];
-    inputEdad.value = cliente[7];
-    inputSexo.option = cliente[8];
+    inputSexo.option = cliente[7];
     inputTelefono.value = cliente[9];
-    inputContrasenna.value = cliente[11];
+    inputContrasenna.value = cliente[1];
 
-    if(cliente[0] == ''){
-        imagenFoto.src = 'img/user_placeholder.png';
+    if(cliente[10] == ''){
+        imagenFoto.src = '"./img/ejercicios/user_placeholder.png"';
     }else{
-        imagenFoto.src = cliente[0];
+        imagenFoto.src = cliente[10];
     }
 
 };
@@ -84,8 +82,8 @@ const mostrarTablaUsuarios = () =>{
         let celdaEdad = fila.insertCell();
         let celdaNacimiento = fila.insertCell();
         let celdaTelefono = fila.insertCell();
-        let celdaRutina = fila.insertCell();
         let celdaConfiguracion = fila.insertCell();
+        let celdaMediciones = fila.insertCell();
 
         celdaCedula.innerHTML = mListaUsuarios[i][0];
         celdaNombre.innerHTML = mListaUsuarios[i][2];
@@ -115,10 +113,22 @@ const mostrarTablaUsuarios = () =>{
         botonIconoEditar.classList.add('fa-edit');
         botonIconoEditar.dataset.cedula = mListaUsuarios[i][0];
 
-        // botonIconoEditar.addEventListener('click' , obtenerInstructorPorCedula);
-        // botonIconoEditar .addEventListener('click' , show);
+        let botonMediciones = document.createElement('a');
+        botonMediciones.classList.add('fa');
+        botonMediciones.classList.add('fa-area-chart');
+
+        let botonRutina = document.createElement('a');
+        botonRutina.classList.add('fa');
+        botonRutina.classList.add('fa-book');
+
+        botonMediciones.dataset.cedula = mListaUsuarios[i][0];
+
+        botonIconoEditar.addEventListener('click' , obtenerClientePorCedula);
+        botonIconoEditar .addEventListener('click' , show);
 
         celdaConfiguracion.appendChild(botonIconoEditar);
+        celdaConfiguracion.appendChild(botonMediciones);
+        celdaConfiguracion.appendChild(botonRutina);
     };
 };
 
@@ -196,8 +206,8 @@ const obtenerDatosActualizar = () =>{
 
     aUsuarioModificado.push(sImagenUrl, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sContrasenna);
     
-    //modificarUsuario(aUsuarioModificado);
-    mostrarTablaInstructores();
+    modificarCliente(aUsuarioModificado);
+    mostrarTablaUsuarios();
     limpiarFormulario();
     botonActualizar.hidden = true;
     botonRegistrar.hidden = false;

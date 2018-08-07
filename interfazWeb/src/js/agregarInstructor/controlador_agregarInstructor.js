@@ -17,6 +17,19 @@ const inputContrasenna = document.querySelector ('#txtContrasenna');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const botonActualizar = document.querySelector('#btnActualizar');
 
+let sImagenUrl;
+let sNombre;
+let sSegundoNombre;
+let sPrimerApellido;
+let sSegundoApellido;
+let sCedula;
+let dFechaNacimiento;
+let nEdad;
+let sSexo;
+let nTelefono;
+let sUsuario;
+let sContrasenna;
+
 botonActualizar.hidden = true;
 
 function obtenerInstructorPorCedula (){
@@ -132,23 +145,39 @@ const limpiarFormulario = () => {
 const obtenerDatosRegistro = () => {
     let aNuevoInstructor = [];
 
-    let sImagenUrl = imagenFoto.src;
-    let sNombre = inputNombre.value;
-    let sSegundoNombre = inputSegundoNombre.value;
-    let sPrimerApellido = inputPrimerApellido.value;
-    let sSegundoApellido = inputSegundoApellido.value;
-    let sCedula = inputCedula.value;
-    let dFechaNacimiento = inputFechaNacimiento.value;
-    let nEdad = inputEdad.value;
-    let sSexo = inputSexo.value;
-    let nTelefono = inputTelefono.value
-    let sUsuario = inputUsuario.value
-    let sContrasenna = inputContrasenna.value
+    sImagenUrl = imagenFoto.src;
+    sNombre = inputNombre.value;
+    sSegundoNombre = inputSegundoNombre.value;
+    sPrimerApellido = inputPrimerApellido.value;
+    sSegundoApellido = inputSegundoApellido.value;
+    sCedula = inputCedula.value;
+    dFechaNacimiento = inputFechaNacimiento.value;
+    nEdad = calcularEdad(dFechaNacimiento);
+    sSexo = inputSexo.value;
+    nTelefono = inputTelefono.value
+    sUsuario = inputUsuario.value
+    sContrasenna = inputContrasenna.value
 
-    aNuevoInstructor.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna, sImagenUrl);
-    registrarInstructor(aNuevoInstructor);
-    mostrarTablaInstructores();
-    limpiarFormulario();
+    let bUsuario=false;
+    let inputsInvalidos=true;
+    inputsInvalidos = validarInputs();
+
+    if(inputsInvalidos==true){
+        swal({
+            type : "error",
+            title: "Informacion invalida",
+            text: "Por favor verifique los campos en rojo e intente de nuevo",
+            confirmButtonText: "Entendido"
+
+        })
+        show();
+    }
+    else{
+        aNuevoInstructor.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna, sImagenUrl);
+        registrarInstructor(aNuevoInstructor);
+        mostrarTablaInstructores();
+        limpiarFormulario();
+    }
     
 };
 
@@ -212,6 +241,84 @@ function hide() {
     }
 }
 
+function validarInputs(){
+    let bError=false;
+    let regexSoloLetras = /^[a-zA-Z]+$/;
+    let regexSoloDigitos = /^[0-9]+$/;
 
+    //Valida el Nombre
+    if(sNombre == "" || regexSoloLetras.test(sNombre)==false){
+        bError = true;
+        inputNombre.classList.add("input-error");
+    }else{
+        inputNombre.classList.remove("input-error");
+    }
+
+    //Valida el segundo Nombre
+    if(sSegundoNombre!="" && regexSoloLetras.test(sSegundoNombre)==false){
+        bError = true;
+        inputSegundoNombre.classList.add("input-error");
+    }else{
+            inputSegundoNombre.classList.remove("input-error");
+    }
+
+    //valida el Primer Apellido
+    if(sPrimerApellido == "" || regexSoloLetras.test(sPrimerApellido)==false){
+        bError = true;
+        inputPrimerApellido.classList.add("input-error");
+    }else{
+        inputPrimerApellido.classList.remove("input-error");
+    }
+
+    //valida el Segundo Apellido
+    if(sSegundoApellido == "" || regexSoloLetras.test(sSegundoApellido)==false){
+        bError = true;
+        inputSegundoApellido.classList.add("input-error");
+    }else{
+        inputSegundoApellido.classList.remove("input-error");
+    }
+    
+    //valida la cedula 
+    if(sCedula=="" || regexSoloDigitos.test(sCedula)==false){
+        bError = true;
+        inputCedula.classList.add("input-error");
+    }else{
+        inputCedula.classList.remove("input-error");
+    }
+
+    //valida el sexo 
+    if(sSexo==""){
+        bError = true;
+        inputSexo.classList.add("input-error");
+    }else{
+        inputSexo.classList.remove("input-error");
+    }
+
+    //valida la fecha - To be fix
+    if(dFechaNacimiento==""){
+        bError = true;
+        inputFechaNacimiento.classList.add("input-error");
+    }else{
+        inputFechaNacimiento.classList.remove("input-error");
+    }
+
+    //valida el numero de telefono
+    if(nTelefono== "" || regexSoloLetras.test(nTelefono)==true){
+        bError = true;
+        inputTelefono.classList.add("input-error");
+    }else{
+        inputTelefono.classList.remove("input-error");
+    }
+
+    //valida el contrasenna
+    if(sContrasenna == ""){
+        bError = true;
+        inputContrasenna.classList.add("input-error");
+    }else{
+        inputContrasenna.classList.remove("input-error");
+    }
+    return bError;
+
+};
 
 
