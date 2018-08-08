@@ -45,9 +45,7 @@ function crearCuenta(){
     telefono=inputTelefono.value;
     password=inputPassword.value;
     confirmacion=inputConfirmarPassword.value;
-    edad=0;
-
-    // edad=calcularEdad(fecha); //Calcula la edad apartir de la fecha
+    edad=calcularEdad(fecha);a
 
     let bUsuario=false;
     let inputsInvalidos=validarInputs();
@@ -61,8 +59,9 @@ function crearCuenta(){
         nuevoUsuario.push(cedula,password,primerNombre,segundoNombre,primerApellido,segundoApellido,fecha,edad,sexo,telefono,foto,"user");
         console.log(nuevoUsuario);
         registrarUsuario(nuevoUsuario);
+        crearMenuUsuario(cedula);
     }
-    crearMenuUsuario(cedula);
+
 };
 
 function validarInputs(){
