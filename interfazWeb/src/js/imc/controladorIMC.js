@@ -9,7 +9,7 @@ const outputMCI = document.querySelector ('#txtMCI');
 const botonGuardar = document.querySelector('#btnGuardar');
 const botonActualizar = document.querySelector('#btnActualizar');
 
-botonGuardar.addEventListener('click', calcularMCI);
+// botonGuardar.addEventListener('click', calcularMCI);
 
 botonActualizar.hidden = true;
 
@@ -113,10 +113,10 @@ const obtenerDatosRegistro = () => {
     
 };
 
-function mostrarMCI(){
-    let nMCI= calcularMCI (nEstatura, nPeso);    
-    outputMCI.value = "El MCI es" + nMCI;
-} 
+// function mostrarMCI(){
+//     let nMCI= calcularMCI (nEstatura, nPeso);    
+//     outputMCI.value = "El MCI es" + nMCI;
+// } 
 
 
 

@@ -21,15 +21,15 @@ const registrarMedida = (paNuevaMedida) =>{
 }; 
 
 
-const mostrarMCI = (pnEstatura, pnPeso) => {
+// const mostrarMCI = (pnEstatura, pnPeso) => {
 
-    let nMCI = 0;
-    for (let i = 0; i < mListaMediciones.length; i++){
-        nMCI = pnPeso / pnEstatura;
-    }
+//     let nMCI = 0;
+//     for (let i = 0; i < mListaMediciones.length; i++){
+//         nMCI = pnPeso / pnEstatura;
+//     }
 
-    return nMCI;
-}
+//     return nMCI;
+// }
 
 
 
