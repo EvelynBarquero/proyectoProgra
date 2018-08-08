@@ -78,12 +78,12 @@ function validarInputs(){
     }
 
     //Valida el segundo Nombre
-    if(regexSoloLetras.test(segundoNombre)==false){
-        bError = true;
-        inputSegundoNombre.classList.add("input-error");
-    }else{
-        inputSegundoNombre.classList.remove("input-error");
-    }
+    // if(regexSoloLetras.test(segundoNombre)==false){
+    //     bError = true;
+    //     inputSegundoNombre.classList.add("input-error");
+    // }else{
+    //     inputSegundoNombre.classList.remove("input-error");
+    // }
 
     //valida el Primer Apellido
     if(primerApellido == "" || regexSoloLetras.test(primerApellido)==false){

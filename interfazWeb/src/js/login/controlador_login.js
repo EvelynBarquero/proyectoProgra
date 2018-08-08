@@ -21,8 +21,8 @@ function iniciarSesion(){
     bUsuario=validarUsuario(sCedula,sPassword);
 
     if(bUsuario==true){
-        construirMenuPricipalCliente();
-        console.log("success");
+        // construirMenuPricipalCliente();
+        window.location=("homeAdmin.html");
     }else{
         console.log("Error"); /* Aqui hay que poner un error message */
         inputCedula.classList.add("input-error");
@@ -37,7 +37,7 @@ function iniciarSesion(){
 }
 
 function registrar(){
-    window.location=("register_Admin.html");
+    window.location=("register.html");
 }
 
 
