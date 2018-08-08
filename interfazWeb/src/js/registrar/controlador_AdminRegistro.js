@@ -49,7 +49,7 @@ function crearCuenta(){
 
     // edad=calcularEdad(fecha); //Calcula la edad apartir de la fecha
 
-    let bUsuario=false;
+    // let bUsuario=false;
     let inputsInvalidos=validarInputs();
     //bUsuario=validarUsuario()
     

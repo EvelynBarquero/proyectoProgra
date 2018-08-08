@@ -20,15 +20,18 @@ const registrarMedida = (paNuevaMedida) =>{
     localStorage.setItem('listaMedicionesLS', JSON.stringify(mListaMediciones));
 }; 
 
-const calcularMCI = (pnEstatura, pnPeso) => {
+
+const mostrarMCI = (pnEstatura, pnPeso) => {
 
     let nMCI = 0;
-    nMCI = pnPeso / (pnEstaturaˆ2);
+    for (let i = 0; i < mListaMediciones.length; i++){
+        nMCI = pnPeso / pnEstatura;
+    }
 
     return nMCI;
-
-
 }
+
+
 
 
 // const buscarInstructorPorCedula = (pCedula) =>{

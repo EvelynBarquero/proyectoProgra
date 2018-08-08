@@ -45,11 +45,9 @@ function crearCuenta(){
     telefono=inputTelefono.value;
     password=inputPassword.value;
     confirmacion=inputConfirmarPassword.value;
-    edad=0;
+    edad=calcularEdad(fecha);a
 
-    // edad=calcularEdad(fecha); //Calcula la edad apartir de la fecha
-
-    let bUsuario=false;
+    // let bUsuario=false;
     let inputsInvalidos=validarInputs();
     //bUsuario=validarUsuario()
     
@@ -61,8 +59,13 @@ function crearCuenta(){
         nuevoUsuario.push(cedula,password,primerNombre,segundoNombre,primerApellido,segundoApellido,fecha,edad,sexo,telefono,foto,"user");
         console.log(nuevoUsuario);
         registrarUsuario(nuevoUsuario);
+        crearMenuUsuario(cedula);
     }
-    crearMenuUsuario(cedula);
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> d4a84d9660ba207a2b9029bcb37180391081f979
 };
 
 function validarInputs(){
@@ -79,12 +82,21 @@ function validarInputs(){
     }
 
     //Valida el segundo Nombre
-    if(regexSoloLetras.test(segundoNombre)==false){
+<<<<<<< HEAD
+    if(segundoNombre!="" & regexSoloLetras.test(segundoNombre)==false){
         bError = true;
         inputSegundoNombre.classList.add("input-error");
     }else{
         inputSegundoNombre.classList.remove("input-error");
     }
+=======
+    // if(regexSoloLetras.test(segundoNombre)==false){
+    //     bError = true;
+    //     inputSegundoNombre.classList.add("input-error");
+    // }else{
+    //     inputSegundoNombre.classList.remove("input-error");
+    // }
+>>>>>>> d4a84d9660ba207a2b9029bcb37180391081f979
 
     //valida el Primer Apellido
     if(primerApellido == "" || regexSoloLetras.test(primerApellido)==false){

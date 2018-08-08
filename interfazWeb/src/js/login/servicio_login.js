@@ -1,7 +1,7 @@
 'use strict';
 
 const mUsuarios = [
-    ["116320103", "*javi123", "Javier","Emanuel","Mendez","Hernandez","Masculino", "12/27/1993",24, 71708724, "admin"],
+    ["12345","12345"],
     [],
     [],
 ];
