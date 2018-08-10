@@ -1,10 +1,10 @@
 'use strict';
 
 
-const obtenerListaUsuarios = () =>{
-    let mListaUsuarios = JSON.parse(localStorage.getItem('listaUsuariosLS'));
-    if(mListaUsuarios == null){
-        mListaUsuarios = [
+const obtenerListaEjercicios = () =>{
+    let mListaEjercicios = JSON.parse(localStorage.getItem('ListaEjerciciosLS'));
+    if(mListaEjercicios == null){
+        mListaEjercicios = [
             ['Pull ups','Brazos', '','../img/ejercicios/3.jpg'],
             ['Squats', 'Piernas', 'xxx','../img/ejercicios/squats.jpeg'],
             ['Remo','Espalda', '','../img/ejercicios/remo.jpg'],
@@ -12,25 +12,25 @@ const obtenerListaUsuarios = () =>{
         ];
     }
 
-    return mListaUsuarios;
+    return mListaEjercicios;
 };
 
 const registrarUsuario = (paNuevoUsuario) =>{
-    let mListaUsuarios = obtenerListaUsuarios();
+    let mListaEjercicios = obtenerListaEjercicios();
 
-    mListaUsuarios.push(paNuevoUsuario);
+    mListaEjercicios.push(paNuevoUsuario);
 
-    localStorage.setItem('listaUsuariosLS', JSON.stringify(mListaUsuarios));
+    localStorage.setItem('ListaEjerciciosLS', JSON.stringify(mListaEjercicios));
 }; 
 
 
 
 const buscarEjercicioPorNombre = (psNombre) =>{
-    let mListaUsuarios = obtenerListaUsuarios();
+    let mListaEjercicios = obtenerListaEjercicios();
     let ejercicioEncontrado = [];
-    for(let i = 0; i < mListaUsuarios.length; i++ ){
-        if(mListaUsuarios[i][0] == psNombre){
-            ejercicioEncontrado = mListaUsuarios[i];
+    for(let i = 0; i < mListaEjercicios.length; i++ ){
+        if(mListaEjercicios[i][0] == psNombre){
+            ejercicioEncontrado = mListaEjercicios[i];
         }
     };
     return ejercicioEncontrado;
@@ -38,13 +38,13 @@ const buscarEjercicioPorNombre = (psNombre) =>{
 
 // pUsuarioModificado -> arreglo
 const modificarEjercicio = (paEjercicioModificado) =>{
-    let mListaUsuarios = obtenerListaUsuarios();
-    for(let i = 0 ; i < mListaUsuarios.length; i++ ){
-        if(mListaUsuarios[i][0] == paEjercicioModificado[0]){
-            mListaUsuarios[i] = paEjercicioModificado;
+    let mListaEjercicios = obtenerListaEjercicios();
+    for(let i = 0 ; i < mListaEjercicios.length; i++ ){
+        if(mListaEjercicios[i][0] == paEjercicioModificado[0]){
+            mListaEjercicios[i] = paEjercicioModificado;
         }
     }
-    localStorage.setItem('listaUsuariosLS', JSON.stringify(mListaUsuarios));
+    localStorage.setItem('ListaEjerciciosLS', JSON.stringify(mListaEjercicios));
 
 };
 

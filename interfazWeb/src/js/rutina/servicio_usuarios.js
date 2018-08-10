@@ -8,12 +8,12 @@ let mListaEjercicios = obtenerListaUsuarios ();
 // }
 
 
-function rutinaRandom (sCategoria){
+function rutinaRandom (psCategoria){
     let mRandom  = [];
-    let mListaEjercicios = obtenerListaUsuarios ();
+    let mListaEjercicios = obtenerListaEjercicios ();
 
     for (let i = 0 ; i < mListaEjercicios; i++){
-        if (mListaEjercicios [i][1] == sCategoria){
+        if (mListaEjercicios [i][1] == psCategoria){
             mRandom.push (mListaEjercicios [i]);
         }
     }

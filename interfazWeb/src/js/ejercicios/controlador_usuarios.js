@@ -37,11 +37,11 @@ function obtenerEjercicioPorNombre (){
 };
 
 const mostrarTablaUsuarios = () => {
-    let mListaUsuarios = obtenerListaUsuarios();
+    let mListaEjercicios = obtenerListaEjercicios();
     let tbody = document.querySelector('#tblUsuarios tbody');
     tbody.innerHTML = '';
 
-    for (let i = 0; i < mListaUsuarios.length; i++) {
+    for (let i = 0; i < mListaEjercicios.length; i++) {
         let fila = tbody.insertRow();
 
         let celdaFoto = fila.insertCell();
@@ -50,14 +50,14 @@ const mostrarTablaUsuarios = () => {
         let celdaNombreOpcional = fila.insertCell();
         let celdaConfiguracion = fila.insertCell();
 
-        celdaNombre.innerHTML = mListaUsuarios[i][0];
-        celdaCategoria.innerHTML = mListaUsuarios[i][1];
-        celdaNombreOpcional.innerHTML = mListaUsuarios[i][2];
+        celdaNombre.innerHTML = mListaEjercicios[i][0];
+        celdaCategoria.innerHTML = mListaEjercicios[i][1];
+        celdaNombreOpcional.innerHTML = mListaEjercicios[i][2];
 
         let imagen = document.createElement('img');
         imagen.classList.add('imagen_tabla');
 
-        let imagenUrl = mListaUsuarios[i][3];
+        let imagenUrl = mListaEjercicios[i][3];
 
         if (imagenUrl == '') {
             imagenUrl = '../img/ejercicios/user_placeholder.png';
@@ -71,7 +71,7 @@ const mostrarTablaUsuarios = () => {
         let botonIconoEditar = document.createElement('a');
         botonIconoEditar.classList.add('fa');
         botonIconoEditar.classList.add('fa-edit');
-        botonIconoEditar.dataset.nombre = mListaUsuarios[i][0];
+        botonIconoEditar.dataset.nombre = mListaEjercicios[i][0];
 
         botonIconoEditar.addEventListener('click' , obtenerEjercicioPorNombre);
         botonIconoEditar .addEventListener('click' , show);
