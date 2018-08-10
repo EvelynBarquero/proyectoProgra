@@ -101,7 +101,7 @@
         </div> -->
 
         <h5>Tabla de instructores</h5>
-        <button class="btn btn-primary" onclick="show()" type="button">Añadir instructor</button>
+        <button class="btn btn-primary" onclick="LimpiarYMostrar()" type="button">Añadir instructor</button>
 
         <!-- formulario -->
         <div id="myDIV">
@@ -162,22 +162,20 @@
                   </div>
                   <input class="form-control" type="text" id="txtCedula" placeholder="Cédula">
                 </div>
-
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
-                  </div>
-                  <input class="form-control" type="date" id="txtFechaNacimiento" placeholder="Fecha de nacimiento">
-                </div>
               </div>
 
               <div class="col-lg-4 left">
-              <div class="input-group mb-3">
+              <!-- <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
                 <input class="form-control" type="number" id="txtEdad" placeholder="Edad">
+              </div> -->
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input class="form-control" type="date" id="txtFechaNacimiento" placeholder="Fecha de nacimiento">
               </div>
 
               <div class="input-group mb-3">
@@ -200,12 +198,12 @@
                 <input class="form-control" type="number" id="txtTelefono" placeholder="Teléfono">
               </div>
 
-              <div class="input-group mb-3">
+              <!-- <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text">@</span>
                 </div>
                 <input class="form-control" type="text" id="txtUsuario" placeholder="Usuario">
-              </div>
+              </div> -->
 
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -238,7 +236,6 @@
             <th scope="col">Edad</th>
             <th scope="col">Sexo</th>
             <th scope="col">Teléfono</th>
-            <th scope="col">Usuario</th>
             <th scope="col">Contraseña</th>
             <th></th>
 
@@ -302,6 +299,7 @@
 <script src="js/agregarInstructor/servicio_agregarInstructor.js"></script>
 <script src="js/agregarInstructor/controlador_agregarInstructor.js"></script>
 <script src="js/agregarInstructor/filter.js"></script>
+<script src="js/perimetros/controladorPerimetros.js"></script>
 
 
 </body>

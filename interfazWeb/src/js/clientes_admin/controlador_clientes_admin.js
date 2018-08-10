@@ -116,15 +116,17 @@ const mostrarTablaUsuarios = () =>{
         let botonMediciones = document.createElement('a');
         botonMediciones.classList.add('fa');
         botonMediciones.classList.add('fa-area-chart');
+        botonMediciones.dataset.cedula = mListaUsuarios[i][0];
 
         let botonRutina = document.createElement('a');
         botonRutina.classList.add('fa');
         botonRutina.classList.add('fa-book');
 
-        botonMediciones.dataset.cedula = mListaUsuarios[i][0];
 
         botonIconoEditar.addEventListener('click' , obtenerClientePorCedula);
         botonIconoEditar .addEventListener('click' , show);
+
+        botonIconoEditar.addEventListener('click', );
 
         celdaConfiguracion.appendChild(botonIconoEditar);
         celdaConfiguracion.appendChild(botonMediciones);
@@ -219,6 +221,14 @@ const mostrarNumeroClientes = () =>{
     let dDiv = document.querySelector("#txtNumeroClientes");
     dDiv.innerHTML=numeroClientes;
 }
+
+
+
+
+
+
+
+
 
 
 mostrarNumeroClientes();

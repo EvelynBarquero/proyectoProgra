@@ -19,36 +19,14 @@ const inputEspalda = document.querySelector ('#txtEspalda');
 const botonGuardar = document.querySelector('#btnGuardar');
 const botonActualizar = document.querySelector('#btnActualizar');
 
+let sCedula="";
+
 botonActualizar.hidden = true;
 
-// function obtenerInstructorPorCedula (){
-//     botonRegistrar.hidden = true;
-//     botonActualizar.hidden = false;
-
-//     let sCedula = this.dataset.cedula;
-//     let instructor = buscarInstructorPorCedula(sCedula);
-
-//     inputNombre.value = instructor[0];
-//     inputSegundoNombre.value = instructor[1];
-//     inputPrimerApellido.value = instructor[2];
-//     inputSegundoApellido.value = instructor[3];
-//     inputCedula.value = instructor[4];
-//     inputCedula.disabled = true;
-
-//     inputFechaNacimiento.value = instructor[5];
-//     inputEdad.value = instructor[6];
-//     inputSexo.option = instructor[7];
-//     inputTelefono.value = instructor[8];
-//     inputUsuario.value = instructor[9];
-//     inputContrasenna.value = instructor[10];
-
-//     if(instructor[11] == ''){
-//         imagenFoto.src = 'img/user_placeholder.png';
-//     }else{
-//         imagenFoto.src = instructor[11];
-//     }
-
-// };
+const construirMediciones=()=>{
+    sCedula = this.dataset.cedula;
+    window.location("perimetros.html");
+}
 
 const mostrarTablaMediciones = () => {
     let mListaMediciones = obtenerListaMediciones();

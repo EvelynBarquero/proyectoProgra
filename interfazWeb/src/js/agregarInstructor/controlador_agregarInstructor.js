@@ -25,7 +25,7 @@ let sSegundoApellido;
 let sCedula;
 let dFechaNacimiento;
 let nEdad;
-let sSexo;
+let sSexo="";
 let nTelefono;
 let sUsuario;
 let sContrasenna;
@@ -47,10 +47,8 @@ function obtenerInstructorPorCedula (){
     inputCedula.disabled = true;
 
     inputFechaNacimiento.value = instructor[5];
-    inputEdad.value = instructor[6];
-    inputSexo.option = instructor[7];
+    inputSexo.value = instructor[7];
     inputTelefono.value = instructor[8];
-    inputUsuario.value = instructor[9];
     inputContrasenna.value = instructor[10];
 
     if(instructor[11] == ''){
@@ -79,7 +77,7 @@ const mostrarTablaInstructores = () => {
         let celdaEdad = fila.insertCell();
         let celdaSexo = fila.insertCell();
         let celdaTelefono = fila.insertCell();
-        let celdaUsuario = fila.insertCell();
+        //let celdaUsuario = fila.insertCell();
         let celdaContrasenna = fila.insertCell();
         let celdaConfiguracion = fila.insertCell();
 
@@ -95,7 +93,7 @@ const mostrarTablaInstructores = () => {
         celdaEdad.innerHTML = mListaInstructores[i][6];
         celdaSexo.innerHTML = mListaInstructores[i][7];
         celdaTelefono.innerHTML = mListaInstructores[i][8];
-        celdaUsuario.innerHTML = mListaInstructores[i][9];
+        //celdaUsuario.innerHTML = mListaInstructores[i][9];
         celdaContrasenna.innerHTML = mListaInstructores[i][10];
 
        
@@ -132,11 +130,9 @@ const limpiarFormulario = () => {
     inputPrimerApellido.value = '';
     inputSegundoApellido.value = '';
     inputCedula.value = '';
-    inputEdad.value = 0;
     inputFechaNacimiento.value = '';
-    inputSexo.option = '';
+    inputSexo.value = 'Vacio';
     inputTelefono.value = '';
-    inputUsuario.value = '';
     inputContrasenna.value = '';
 };
 
@@ -155,7 +151,7 @@ const obtenerDatosRegistro = () => {
     nEdad = calcularEdad(dFechaNacimiento);
     sSexo = inputSexo.value;
     nTelefono = inputTelefono.value
-    sUsuario = inputUsuario.value
+    //sUsuario = inputUsuario.value
     sContrasenna = inputContrasenna.value
 
     let bUsuario=false;
@@ -192,7 +188,7 @@ const obtenerDatosActualizar = () =>{
     let sSegundoApellido = inputSegundoApellido.value;
     let sCedula = inputCedula.value;
     let dFechaNacimiento = inputFechaNacimiento.value;
-    let nEdad = Number(inputEdad.value);
+    let nEdad = calcularEdad(dFechaNacimiento);
     let sSexo = inputSexo.value;
     let nTelefono = inputTelefono.value
     let sUsuario = inputUsuario.value
@@ -220,7 +216,10 @@ botonActualizar .addEventListener('click' , hide);
 
 
 
-
+function LimpiarYMostrar(){
+    show();
+    limpiarFormulario();
+}
 // --------------------------------------------------
 
 function show() {

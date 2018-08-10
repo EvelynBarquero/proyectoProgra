@@ -24,7 +24,7 @@ let primerApellido="";
 let segundoApellido="";
 let cedula="";
 let sexo="";
-let foto=inputFoto.src;
+let foto="";
 let fecha= new Date (inputFecha.value);
 let telefono="";
 let password="";
@@ -45,7 +45,8 @@ function crearCuenta(){
     telefono=inputTelefono.value;
     password=inputPassword.value;
     confirmacion=inputConfirmarPassword.value;
-    edad=calcularEdad(fecha);a
+    edad=calcularEdad(fecha);
+    foto=inputFoto.src;
 
     let bUsuario=false;
     let inputsInvalidos=validarInputs();
