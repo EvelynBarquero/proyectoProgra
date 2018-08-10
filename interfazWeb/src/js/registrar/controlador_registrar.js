@@ -48,7 +48,11 @@ function crearCuenta(){
     edad=calcularEdad(fecha);
     foto=inputFoto.src;
 
+<<<<<<< HEAD
+    // let bUsuario=false;
+=======
     let bUsuario=false;
+>>>>>>> origin/master
     let inputsInvalidos=validarInputs();
     //bUsuario=validarUsuario()
     
@@ -62,7 +66,15 @@ function crearCuenta(){
         registrarUsuario(nuevoUsuario);
         crearMenuUsuario(cedula);
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> d4a84d9660ba207a2b9029bcb37180391081f979
+=======
+
+>>>>>>> origin/master
 };
 
 function validarInputs(){
@@ -79,12 +91,27 @@ function validarInputs(){
     }
 
     //Valida el segundo Nombre
+<<<<<<< HEAD
+<<<<<<< HEAD
+    if(segundoNombre!="" & regexSoloLetras.test(segundoNombre)==false){
+        bError = true;
+        inputSegundoNombre.classList.add("input-error");
+    }else{
+        inputSegundoNombre.classList.remove("input-error");
+    }
+=======
+=======
+>>>>>>> origin/master
     // if(regexSoloLetras.test(segundoNombre)==false){
     //     bError = true;
     //     inputSegundoNombre.classList.add("input-error");
     // }else{
     //     inputSegundoNombre.classList.remove("input-error");
     // }
+<<<<<<< HEAD
+>>>>>>> d4a84d9660ba207a2b9029bcb37180391081f979
+=======
+>>>>>>> origin/master
 
     //valida el Primer Apellido
     if(primerApellido == "" || regexSoloLetras.test(primerApellido)==false){

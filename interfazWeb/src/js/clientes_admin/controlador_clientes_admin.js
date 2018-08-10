@@ -148,7 +148,7 @@ const limpiarFormulario = () => {
 };
 
 const obtenerDatosRegistro = () => {
-    let aNuevoCliente = [];
+    // let aNuevoCliente = [];
 
     sImagenUrl = imagenFoto.src;
     sNombre = inputNombre.value;
@@ -206,7 +206,7 @@ const obtenerDatosActualizar = () =>{
     nEdad=calcularEdad(dFechaNacimiento);
 
 
-    aUsuarioModificado.push(sImagenUrl, sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sContrasenna);
+    aUsuarioModificado.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sContrasenna, sImagenUrl, 'user');
     
     modificarCliente(aUsuarioModificado);
     mostrarTablaUsuarios();

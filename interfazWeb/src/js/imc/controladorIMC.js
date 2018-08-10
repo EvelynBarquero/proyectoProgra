@@ -4,12 +4,12 @@
 const inputFecha = document.querySelector('#txtFecha');
 const inputEstatura = document.querySelector('#txtEstatura');
 const inputPeso  = document.querySelector('#txtPeso');
-// const outputIMC= document.querySelector('#txtIMC');
+const outputMCI = document.querySelector ('#txtMCI');
 
 const botonGuardar = document.querySelector('#btnGuardar');
 const botonActualizar = document.querySelector('#btnActualizar');
 
-botonGuardar.addEventListener('click', calcularMCI);
+// botonGuardar.addEventListener('click', calcularMCI);
 
 botonActualizar.hidden = true;
 
@@ -104,17 +104,19 @@ const obtenerDatosRegistro = () => {
     let dFecha = inputFecha.value;
     let nEstatura = inputEstatura.value;
     let nPeso = inputPeso.value;
-    let nMCI = 0;
+    
 
-    nMCI =  calcularMCI (nEstatura, nPeso);
-    document.querySelector ('#txtMCI').value = nMCI;
-
-    aNuevaMedida.push(dFecha , nEstatura, nPeso, nMCI);
+    aNuevaMedida.push(dFecha , nEstatura, nPeso);
     registrarMedida(aNuevaMedida);
     mostrarTablaMediciones();
     limpiarFormulario();
     
 };
+
+// function mostrarMCI(){
+//     let nMCI= calcularMCI (nEstatura, nPeso);    
+//     outputMCI.value = "El MCI es" + nMCI;
+// } 
 
 
 
