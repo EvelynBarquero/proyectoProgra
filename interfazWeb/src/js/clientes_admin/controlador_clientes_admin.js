@@ -55,12 +55,13 @@ function obtenerClientePorCedula (){
 
 };
 
-// const crearFormularioRegistro = () =>{
-//     window.location=("register_Admin.html");
-// }
+let sMedidasCliente="";
 
-// botonRegistrar.addEventListener("click", crearFormularioRegistro);
-
+function costruirMediciones(){
+    sMedidasCliente = this.dataset.cedula;
+    setcliente(sMedidasCliente);
+    costruirMedicionesCliente(sMedidasCliente);
+}
 
 
 const mostrarTablaUsuarios = () =>{
@@ -126,7 +127,7 @@ const mostrarTablaUsuarios = () =>{
         botonIconoEditar.addEventListener('click' , obtenerClientePorCedula);
         botonIconoEditar .addEventListener('click' , show);
 
-        botonIconoEditar.addEventListener('click', );
+        botonMediciones.addEventListener('click', costruirMediciones);
 
         celdaConfiguracion.appendChild(botonIconoEditar);
         celdaConfiguracion.appendChild(botonMediciones);
@@ -188,7 +189,6 @@ const obtenerDatosRegistro = () => {
     mostrarNumeroClientes();
     
 };
-
 
 const obtenerDatosActualizar = () =>{
     let aUsuarioModificado = [];
