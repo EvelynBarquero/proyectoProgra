@@ -48,4 +48,5 @@ const calcularGrasaSubcutanea=()=>{
     }else{
         grasaSubcutanea=0.1548 * sumatoriaPliegues + 3.580;
     }
+    return grasaSubcutanea;
 }
