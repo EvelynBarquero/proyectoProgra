@@ -6,9 +6,17 @@ const obtenerListaEjercicios = () =>{
     if(mListaEjercicios == null){
         mListaEjercicios = [
             ['Pull ups','Brazos', '','../img/ejercicios/3.jpg'],
-            ['Squats', 'Piernas', 'xxx','../img/ejercicios/squats.jpeg'],
+            ['Push ups','Brazos', '','../img/ejercicios/3.jpg'],
+            ['Squats', 'Muslo', 'xxx','../img/ejercicios/squats.jpeg'],
+            ['Sentadillas', 'Muslo', 'xxx','../img/ejercicios/squats.jpeg'],
             ['Remo','Espalda', '','../img/ejercicios/remo.jpg'],
-            ['Flexiones','Pecho', 'Lagartijas', '../img/ejercicios/1.jpg']
+            ['Remo abierto','Espalda', '','../img/ejercicios/remo.jpg'],
+            ['Flexiones','Pecho', 'Lagartijas', '../img/ejercicios/1.jpg'],
+            ['Peck deck','Pecho', '', '../img/ejercicios/1.jpg'],
+            ['Pantorrilla1','Pantorrilla', 'Lagartijas', '../img/ejercicios/1.jpg'],
+            ['Pantorrilla2','Pantorrilla', '', '../img/ejercicios/1.jpg'],
+            ['Abdominales','Abdomen', 'Lagartijas', '../img/ejercicios/1.jpg'],
+            ['Planchas','Abdomen', '', '../img/ejercicios/1.jpg']
         ];
     }
 

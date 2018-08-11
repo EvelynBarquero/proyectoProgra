@@ -1,6 +1,27 @@
 'use strict';
 
-let mListaEjercicios = obtenerListaUsuarios ();
+const obtenerListaEjercicios = () =>{
+
+    let mListaEjercicios = JSON.parse(localStorage.getItem('ListaEjerciciosLS'));
+    if(mListaEjercicios == null){
+        mListaEjercicios = [
+            ['Pull ups','Brazos', '','../img/ejercicios/3.jpg'],
+            ['Push ups','Brazos', '','../img/ejercicios/3.jpg'],
+            ['Squats', 'Muslo', 'xxx','../img/ejercicios/squats.jpeg'],
+            ['Sentadillas', 'Muslo', 'xxx','../img/ejercicios/squats.jpeg'],
+            ['Remo','Espalda', '','../img/ejercicios/remo.jpg'],
+            ['Remo abierto','Espalda', '','../img/ejercicios/remo.jpg'],
+            ['Flexiones','Pecho', 'Lagartijas', '../img/ejercicios/1.jpg'],
+            ['Peck deck','Pecho', '', '../img/ejercicios/1.jpg'],
+            ['Pantorrilla1','Pantorrilla', 'Lagartijas', '../img/ejercicios/1.jpg'],
+            ['Pantorrilla2','Pantorrilla', '', '../img/ejercicios/1.jpg'],
+            ['Abdominales','Abdomen', 'Lagartijas', '../img/ejercicios/1.jpg'],
+            ['Planchas','Abdomen', '', '../img/ejercicios/1.jpg']
+        ];
+    }
+
+    return mListaEjercicios;
+}
 
 
 // function  agregarRutina {
@@ -11,14 +32,16 @@ let mListaEjercicios = obtenerListaUsuarios ();
 function rutinaRandom (psCategoria){
     let mRandom  = [];
     let mListaEjercicios = obtenerListaEjercicios ();
+    let mCategoria = [];
 
-    for (let i = 0 ; i < mListaEjercicios; i++){
+    for (let i = 0 ; i < mListaEjercicios.length; i++){
         if (mListaEjercicios [i][1] == psCategoria){
-            mRandom.push (mListaEjercicios [i]);
+            // mRandom = mListaEjercicios [i];
+            mCategoria.push (mListaEjercicios [i]);
         }
     }
-    let numero = math.floor (Math.random() * mRandom.length );
-    return mRandom [numero];
+    let numero = Math.floor(Math.random() * mCategoria.length);
+    return mCategoria [numero]; 
 
 }
 
