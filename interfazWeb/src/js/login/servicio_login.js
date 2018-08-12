@@ -2,14 +2,26 @@
 
 function validarUsuario(psCedula,psPassword){
     let listaUsuarios=obtenerListaUsuarios();
-    let bUsuario=false;
+    let listaInstructores=obtenerListaInstructores();
+
+    let bUsuario=0;
 
     for(let i=0; i<listaUsuarios.length; i++){
         if(listaUsuarios[i][0]==psCedula){
             if(listaUsuarios[i][1]==psPassword){
-                bUsuario=true;
+                bUsuario=1;
             }
         }
+    }
+    for(let i=0; i<listaInstructores.length; i++){
+        if(listaInstructores[i][0]==psCedula){
+            if(listaInstructores[i][1]==psPassword){
+                bUsuario=2;
+            }
+        }
+    }
+    if(psCedula==999999999&psPassword=="Admin123"){
+        bUsuario=3
     }
     return bUsuario;
 }
