@@ -59,16 +59,22 @@ hover:hover{
     float: left;
 }
 
+.breadcrumb{
+    background-color: transparent;
+}
+
 #breadcrumbLink{
     color: #5ad3db;
     font-size: 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #breadcrumbLink-noSelected{
     color: gray;
     font-size: 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-link:hover{
@@ -171,4 +177,8 @@ h5{
 }
 .fa{
     margin-right: 6px;
+}
+
+#line-chart{
+    display: none;
 }
