@@ -53,12 +53,12 @@ function obtenerClientePorCedula (){
     inputCedula.value = cliente[0];
     inputCedula.disabled = true;
     inputFechaNacimiento.value = cliente[6];
-    inputSexo.option = cliente[7];
+    inputSexo.value = cliente[8];
     inputTelefono.value = cliente[9];
     inputContrasenna.value = cliente[1];
 
     if(cliente[10] == ''){
-        imagenFoto.src = '"./img/ejercicios/user_placeholder.png"';
+        imagenFoto.src = "../img/ejercicios/user_placeholder.png";
     }else{
         imagenFoto.src = cliente[10];
     }
@@ -101,16 +101,16 @@ const mostrarTablaUsuarios = () =>{
         let celdaNacimiento = fila.insertCell();
         let celdaTelefono = fila.insertCell();
         let celdaConfiguracion = fila.insertCell();
-        let celdaMediciones = fila.insertCell();
+        // let celdaMediciones = fila.insertCell();
 
         celdaCedula.innerHTML = mListaUsuarios[i][0];
         celdaNombre.innerHTML = mListaUsuarios[i][2];
         celdaSegundoNombre.innerHTML = mListaUsuarios[i][3];
         celdaPrimerApellido.innerHTML = mListaUsuarios[i][4];
         celdaSegundoApellido.innerHTML = mListaUsuarios[i][5];
-        celdaSexo.innerHTML=mListaUsuarios[i][8];
-        celdaEdad.innerHTML=mListaUsuarios[i][7];
         celdaNacimiento.innerHTML = mListaUsuarios[i][6];
+        celdaEdad.innerHTML=mListaUsuarios[i][7];
+        celdaSexo.innerHTML=mListaUsuarios[i][8];
         celdaTelefono.innerHTML = mListaUsuarios[i][9];
 
         let imagen = document.createElement('img');
@@ -163,9 +163,9 @@ const limpiarFormulario = () => {
     inputSegundoApellido.value = '';
     inputCedula.value = '';
     inputFechaNacimiento.value = '';
-    inputSexo.option = '';
+    inputSexo.value = '';
     inputTelefono.value = '';
-    inputContrasenna.value = '';
+    // inputContrasenna.value = '';
 };
 
 //Obtiene los datos de registro para agregar un nuevo cliente a la matriz
@@ -184,7 +184,7 @@ const obtenerDatosRegistro = () => {
     sContrasenna = inputContrasenna.value
     nEdad=calcularEdad(dFechaNacimiento);
 
-    let bUsuario=false;
+    // let bUsuario=false;
     let inputsInvalidos=true;
     inputsInvalidos = validarInputs();
     //bUsuario=validarUsuario()
@@ -228,8 +228,8 @@ const obtenerDatosActualizar = () =>{
     nEdad=calcularEdad(dFechaNacimiento);
 
 
-    aUsuarioModificado.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sContrasenna, sImagenUrl, 'user');
-    
+    aUsuarioModificado.push(sCedula,sContrasenna,sNombre,sSegundoNombre,sPrimerApellido,sSegundoApellido,dFechaNacimiento,nEdad,sSexo,nTelefono,sImagenUrl,'User');
+
     modificarCliente(aUsuarioModificado);
     mostrarTablaUsuarios();
     limpiarFormulario();
