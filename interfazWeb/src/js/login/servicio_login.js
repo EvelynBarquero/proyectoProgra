@@ -1,18 +1,12 @@
 'use strict';
 
-const mUsuarios = [
-    ["12345","12345"],
-    [],
-    [],
-];
-
 function validarUsuario(psCedula,psPassword){
-    
+    let listaUsuarios=obtenerListaUsuarios();
     let bUsuario=false;
 
-    for(let i=0; i<mUsuarios.length; i++){
-        if(mUsuarios[i][0]===psCedula){
-            if(mUsuarios[i][1]==psPassword){
+    for(let i=0; i<listaUsuarios.length; i++){
+        if(listaUsuarios[i][0]==psCedula){
+            if(listaUsuarios[i][1]==psPassword){
                 bUsuario=true;
             }
         }

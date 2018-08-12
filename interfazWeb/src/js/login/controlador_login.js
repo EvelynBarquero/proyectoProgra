@@ -22,7 +22,8 @@ function iniciarSesion(){
 
     if(bUsuario==true){
         // construirMenuPricipalCliente();
-        window.location=("homeAdmin.html");
+        localStorage.setItem('cliente', JSON.stringify(sCedula));
+        window.location=("interfazRutinaCliente.html");
     }else{
         console.log("Error"); /* Aqui hay que poner un error message */
         inputCedula.classList.add("input-error");
