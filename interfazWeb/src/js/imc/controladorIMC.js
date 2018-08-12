@@ -3,8 +3,8 @@
 // const inputImagen = document.querySelector('#btnSeleccionarImagen');
 const inputFecha = document.querySelector('#txtFecha');
 const inputEstatura = document.querySelector('#txtEstatura');
-const inputPeso  = document.querySelector('#txtPeso');
-const outputMCI = document.querySelector ('#txtMCI');
+const inputPeso = document.querySelector('#txtPeso');
+const outputMCI = document.querySelector('#txtMCI');
 
 const botonGuardar = document.querySelector('#btnGuardar');
 const botonActualizar = document.querySelector('#btnActualizar');
@@ -13,79 +13,29 @@ const botonActualizar = document.querySelector('#btnActualizar');
 
 botonActualizar.hidden = true;
 
-// function obtenerInstructorPorCedula (){
-//     botonRegistrar.hidden = true;
-//     botonActualizar.hidden = false;
-
-//     let sCedula = this.dataset.cedula;
-//     let instructor = buscarInstructorPorCedula(sCedula);
-
-//     inputNombre.value = instructor[0];
-//     inputSegundoNombre.value = instructor[1];
-//     inputPrimerApellido.value = instructor[2];
-//     inputSegundoApellido.value = instructor[3];
-//     inputCedula.value = instructor[4];
-//     inputCedula.disabled = true;
-
-//     inputFechaNacimiento.value = instructor[5];
-//     inputEdad.value = instructor[6];
-//     inputSexo.option = instructor[7];
-//     inputTelefono.value = instructor[8];
-//     inputUsuario.value = instructor[9];
-//     inputContrasenna.value = instructor[10];
-
-//     if(instructor[11] == ''){
-//         imagenFoto.src = 'img/user_placeholder.png';
-//     }else{
-//         imagenFoto.src = instructor[11];
-//     }
-
-// };
+let sCedulaIMC = getCliente();
 
 const mostrarTablaMediciones = () => {
-    let mListaMediciones = obtenerListaMediciones();
+    let mIMC = obtenerListaIMC();
     let tbody = document.querySelector('#tblPerimetros tbody');
     tbody.innerHTML = '';
 
-    for (let i = 0; i < mListaMediciones.length; i++) {
-        let fila = tbody.insertRow();
+    for (let i = 0; i < mIMC.length; i++) {
+        if (mIMC[i][4] == sCedulaIMC) {
+            let fila = tbody.insertRow();
 
-        let celdaFecha  = fila.insertCell();
-        let celdaEstatura = fila.insertCell();
-        let celdaPeso = fila.insertCell();
-        let celdaIMC= fila.insertCell();
+            let celdaFecha = fila.insertCell();
+            let celdaEstatura = fila.insertCell();
+            let celdaPeso = fila.insertCell();
+            let celdaIMC = fila.insertCell();
 
-       
-        // celdaFoto.innerHTML = mListaInstructores[i][0];
-        celdaFecha.innerHTML = mListaMediciones[i][0];
-        celdaEstatura.innerHTML = mListaMediciones[i][1];
-        celdaPeso.innerHTML = mListaMediciones[i][2];
-        celdaIMC.innerHTML = mListaMediciones[i][3];
-       
 
-       
-        // let imagen = document.createElement('img');
-        // imagen.classList.add('imagen_tabla');
+            celdaFecha.innerHTML = mIMC[i][0];
+            celdaEstatura.innerHTML = mIMC[i][1];
+            celdaPeso.innerHTML = mIMC[i][2];
+            celdaIMC.innerHTML = mIMC[i][3];
 
-        // let imagenUrl = mListaInstructores[i][11];
-
-        // if (imagenUrl == '') {
-        //     imagenUrl = '../img/ejercicios/user_placeholder.png';
-        // };
-
-        // imagen.src = imagenUrl;
-
-        // celdaFoto.appendChild(imagen);
-
-        // let botonIconoEditar = document.createElement('a');
-        // botonIconoEditar.classList.add('fa');
-        // botonIconoEditar.classList.add('fa-edit');
-        // botonIconoEditar.dataset.cedula = mListaMediciones[i][0];
-
-        // botonIconoEditar.addEventListener('click' , obtenerInstructorPorCedula);
-        // botonIconoEditar .addEventListener('click' , show);
-
-        // celdaConfiguracion.appendChild(botonIconoEditar);
+        }
     };
 };
 
@@ -104,13 +54,13 @@ const obtenerDatosRegistro = () => {
     let dFecha = inputFecha.value;
     let nEstatura = inputEstatura.value;
     let nPeso = inputPeso.value;
-    
 
-    aNuevaMedida.push(dFecha , nEstatura, nPeso);
+
+    aNuevaMedida.push(dFecha, nEstatura, nPeso);
     registrarMedida(aNuevaMedida);
     mostrarTablaMediciones();
     limpiarFormulario();
-    
+
 };
 
 // function mostrarMCI(){
@@ -138,7 +88,7 @@ const obtenerDatosRegistro = () => {
 
 
 //     aUsuarioModificado.push(sNombre,sSegundoNombre, sPrimerApellido, sSegundoApellido, sCedula, dFechaNacimiento, nEdad, sSexo, nTelefono, sUsuario, sContrasenna, sImagenUrl );
-    
+
 //     modificarUsuario(aUsuarioModificado);
 //     mostrarTablaInstructores();
 //     limpiarFormulario();
@@ -153,7 +103,7 @@ mostrarTablaMediciones();
 botonGuardar.addEventListener('click', obtenerDatosRegistro);
 // botonActualizar.addEventListener('click', obtenerDatosActualizar);
 
-botonGuardar .addEventListener('click' , hide);
+botonGuardar.addEventListener('click', hide);
 // botonActualizar .addEventListener('click' , hide);
 
 

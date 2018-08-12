@@ -17,6 +17,20 @@ const inputAbdominalIzquierdo = document.querySelector('#txtAbdominalIzquierdo')
 const botonGuardar = document.querySelector('#btnGuardar');
 const botonActualizar = document.querySelector('#btnActualizar');
 
+let sCedulaPerimetro = getCliente();
+let labesCliente = [];
+let TricepD = [];
+let TricepI = [];
+let SubescapularD = [];
+let SubescapularI = [];
+let SupraespinalD = [];
+let SupraespinalI = [];
+let AbdominalI = [];
+let AbdominalD = [];
+let GrasaS = [];
+let GrasaM = [];
+
+
 botonActualizar.hidden = true;
 let sCedulaPliegue = getCliente();
 
@@ -39,6 +53,8 @@ const mostrarTablaMediciones = () => {
             let celdaSupraespinalIzquierdo = fila.insertCell();
             let celdaAbdominalDerecho = fila.insertCell();
             let celdaAbdominalIzquierdo = fila.insertCell();
+            let celdaGrasaSubcutanea = fila.insertCell();
+            let celdaGrasaMuscular = fila.insertCell();
 
             celdaFecha.innerHTML = mPliegues[i][0];
             celdaTricepDerecho.innerHTML = mPliegues[i][1];
@@ -49,6 +65,20 @@ const mostrarTablaMediciones = () => {
             celdaSupraespinalIzquierdo.innerHTML = mPliegues[i][6];
             celdaAbdominalDerecho.innerHTML = mPliegues[i][7];
             celdaAbdominalIzquierdo.innerHTML = mPliegues[i][8];
+            celdaGrasaSubcutanea.innerHTML = mPliegues[i][9];
+            celdaGrasaMuscular.innerHTML = mPliegues[i][10];
+
+            labesCliente.push(mPliegues[i][0]);
+            TricepD.push(mPliegues[i][1]);
+            TricepI.push(mPliegues[i][2]);
+            SubescapularD.push(mPliegues[i][3]);
+            SubescapularI.push(mPliegues[i][4]);
+            SupraespinalD.push(mPliegues[i][5]);
+            SupraespinalI.push(mPliegues[i][6]);
+            AbdominalI.push(mPliegues[i][7]);
+            AbdominalD.push(mPliegues[i][8]);
+            GrasaS.push(mPliegues[i][9]);
+            GrasaM.push(mPliegues[i][10]);
         }
 
     };
@@ -148,3 +178,90 @@ function hide() {
     }
 }
 
+function showGrafic() {
+    var x = document.getElementById("line-chart");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+    new Chart(document.getElementById("line-chart"), {
+
+        type: 'line',
+        data: {
+            labels: labesCliente,
+            datasets: [{
+                data: TricepD,
+                label: "Tricep-Derecho",
+                borderColor: "#3e95cd",
+                fill: false
+            }, {
+                data: TricepI,
+                label: "Tricep-Izquierdo",
+                borderColor: "#8e5ea2",
+                fill: false
+            }, {
+                data: SubescapularD,
+                label: "Subescapular derecho",
+                borderColor: "#3cba9f",
+                fill: false
+            }, {
+                data: SubescapularI,
+                label: "Subescapular izquierdo",
+                borderColor: "#e8c3b9",
+                fill: false
+            }, {
+                data: SupraespinalD,
+                label: "Supraespinal derecha",
+                borderColor: "#c45850",
+                fill: false
+            },
+            {
+                data: SupraespinalI,
+                label: "Supraespinal izquierda",
+                borderColor: "#81F7BE",
+                fill: false
+            },
+            {
+                data: AbdominalD,
+                label: "Abdominal derecho",
+                borderColor: "#2EFE2E",
+                fill: false
+            },
+            {
+                data: AbdominalI,
+                label: "Abdominal izquierdo",
+                borderColor: "#BF00FF",
+                fill: false
+            },
+            {
+                data: GrasaS,
+                label: "%Grasa subcutanea",
+                borderColor: "#BF00FF",
+                fill: false
+            },
+            {
+                data: GrasaM,
+                label: "%Grasa muscular",
+                borderColor: "#BF00FF",
+                fill: false
+            },
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Historico de mediciones',
+            }
+        }
+    });
+}
+
+function hideGrafic() {
+    var x = document.getElementById("line-chart");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}

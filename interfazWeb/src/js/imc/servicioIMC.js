@@ -1,11 +1,11 @@
 'use strict';
 
 
-const obtenerListaMediciones = () =>{
-    let mListaMediciones = JSON.parse(localStorage.getItem('listaMedicionesLS'));
+const obtenerListaIMC = () =>{
+    let mListaMediciones = JSON.parse(localStorage.getItem('listaIMCLS'));
     if(mListaMediciones == null){
         mListaMediciones = [
-            ['2017-06-22','23','34', '54']
+            ['2017-06-22','23','34', '54', "116320103"]
         ];
     }
 
@@ -17,7 +17,7 @@ const registrarMedida = (paNuevaMedida) =>{
 
     mListaMediciones.push(paNuevaMedida);
 
-    localStorage.setItem('listaMedicionesLS', JSON.stringify(mListaMediciones));
+    localStorage.setItem('listaIMCLS', JSON.stringify(mListaMediciones));
 }; 
 
 
