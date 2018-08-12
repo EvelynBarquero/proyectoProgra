@@ -1,4 +1,10 @@
+// WEB03 Fundamentos de Programación Web G1 (2-2018) 
+// Proyecto final segundo cuatrimestre 2018
+// Evelyn Barquero - Javier Mendez
+
 'use strcit';
+
+//Inputs 
 const imagenFoto = document.querySelector('#imgFoto');
 const inputNombre = document.querySelector('#txtNombre');
 const inputSegundoNombre = document.querySelector('#txtSegundoNombre');
@@ -11,10 +17,13 @@ const inputTelefono = document.querySelector ('#txtTelefono');
 const inputContrasenna = document.querySelector ('#txtContrasenna');
 const outputNumeroClientes = document.querySelector("txtNumeroClientes");
 
+// Botones
 const botonRegistrarClientes = document.querySelector('#btnRegistrarClientes');
 const botonRegistrar = document.querySelector('#btnRegistrar');
 const botonActualizar = document.querySelector('#btnActualizar');
 
+// Variables locales
+let sMedidasCliente="";
 let sImagenUrl = "";
 let sNombre = "";
 let sSegundoNombre = "";
@@ -29,6 +38,7 @@ let nEdad=0
 
 botonActualizar.hidden = true;
 
+// Busca un cliente por cedula 
 function obtenerClientePorCedula (){
     botonRegistrar.hidden = true;
     botonActualizar.hidden = false;
@@ -55,15 +65,22 @@ function obtenerClientePorCedula (){
 
 };
 
-let sMedidasCliente="";
-
+// Construye la pagina de las mediciones. El set guarda en un JSON la cedula del cliente
 function costruirMediciones(){
     sMedidasCliente = this.dataset.cedula;
     setcliente(sMedidasCliente);
     costruirMedicionesCliente(sMedidasCliente);
 }
 
+// Construye la pagina de la rutina. El set guarda en un JSON la cedula del cliente
+function construirRutina(){
+    let sRutinaCliente = this.dataset.cedula;
+    setcliente(sRutinaCliente);
+    construirRutinaCliente();
 
+}
+
+// Muestra todos los usuarios registrados en formato de tabla
 const mostrarTablaUsuarios = () =>{
     let mListaUsuarios = obtenerListaUsuarios();
     let tbody = document.querySelector('#tblUsuarios tbody');
@@ -122,12 +139,14 @@ const mostrarTablaUsuarios = () =>{
         let botonRutina = document.createElement('a');
         botonRutina.classList.add('fa');
         botonRutina.classList.add('fa-book');
-
+        botonRutina.dataset.cedula = mListaUsuarios[i][0];
 
         botonIconoEditar.addEventListener('click' , obtenerClientePorCedula);
         botonIconoEditar .addEventListener('click' , show);
 
         botonMediciones.addEventListener('click', costruirMediciones);
+
+        botonRutina.addEventListener('click', construirRutina)
 
         celdaConfiguracion.appendChild(botonIconoEditar);
         celdaConfiguracion.appendChild(botonMediciones);
@@ -135,6 +154,7 @@ const mostrarTablaUsuarios = () =>{
     };
 };
 
+//Limpia el formulario 
 const limpiarFormulario = () => {
     imagenFoto.src = '../img/ejercicios/user_placeholder.png';
     inputNombre.value = '';
@@ -148,6 +168,7 @@ const limpiarFormulario = () => {
     inputContrasenna.value = '';
 };
 
+//Obtiene los datos de registro para agregar un nuevo cliente a la matriz
 const obtenerDatosRegistro = () => {
     // let aNuevoCliente = [];
 
@@ -190,6 +211,7 @@ const obtenerDatosRegistro = () => {
     
 };
 
+// Obtiene los datos cambiados de un cliente existente para remplazarlos en la matriz
 const obtenerDatosActualizar = () =>{
     let aUsuarioModificado = [];
 
@@ -216,32 +238,15 @@ const obtenerDatosActualizar = () =>{
     inputCedula.disabled = false;
 
 };
+
+// Metodo que calcula la cantidad de clientes y lo pone en el dashbord 
 const mostrarNumeroClientes = () =>{
     let numeroClientes=determinarNumeroClientes();
     let dDiv = document.querySelector("#txtNumeroClientes");
     dDiv.innerHTML=numeroClientes;
 }
 
-
-
-
-
-
-
-
-
-
-mostrarNumeroClientes();
-mostrarTablaUsuarios();
-hide();
-botonRegistrar.addEventListener('click', obtenerDatosRegistro);
-botonActualizar.addEventListener('click', obtenerDatosActualizar);
-
-botonRegistrar .addEventListener('click' , hide);
-botonActualizar .addEventListener('click' , hide);
-
-
-
+// Metodo que muestra el div de registrar usuario 
 function show() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "block") {
@@ -251,6 +256,7 @@ function show() {
     }
 }
 
+//Metodo que oculta el div de registrar usuario
 function hide() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -260,6 +266,7 @@ function hide() {
     }
 }
 
+//Metodo que valida lo inputs
 function validarInputs(){
     let bError=false;
     let regexSoloLetras = /^[a-zA-Z]+$/;
@@ -339,3 +346,16 @@ function validarInputs(){
     return bError;
 
 };
+
+// Carga de pagina
+
+mostrarNumeroClientes();
+mostrarTablaUsuarios();
+hide();
+
+// EventListeners de los botones
+botonRegistrar.addEventListener('click', obtenerDatosRegistro);
+botonActualizar.addEventListener('click', obtenerDatosActualizar);
+botonRegistrar .addEventListener('click' , hide);
+botonActualizar .addEventListener('click' , hide);
+

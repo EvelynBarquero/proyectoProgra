@@ -2,8 +2,7 @@
 let Mcliente="";
 
 function setcliente(psMedidasCliente){
-    Mcliente = sMedidasCliente;
-    localStorage.setItem('cliente', JSON.stringify(Mcliente));
+    localStorage.setItem('cliente', JSON.stringify(psMedidasCliente));
 }
 
 function getCliente(){

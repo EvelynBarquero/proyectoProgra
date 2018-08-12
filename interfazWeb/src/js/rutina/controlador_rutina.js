@@ -1,8 +1,9 @@
 'use strict';
 
 const botonRutina = document.querySelector('#btnRutina');
+const NombreCliente = document.querySelector("#txtNombreCliente");
 botonRutina.addEventListener('click', agregarRutina);
-
+let sCedula=getCliente();
 
 function agregarRutina() {
     // let mListaEjercicios = []
@@ -24,13 +25,13 @@ function agregarRutina() {
 
         }
         mCategorias.splice (numero, 1);
-        console.log (categoria);
-        console.log (numero);
     }
+
+    registrarRutina(mRutinaRandom,sCedula);
 
     let tbody = document.querySelector('#tblEjercicios tbody');
     tbody.innerHTML = '';
-    for (let k = 0; k < mRutinaRandom.length; k++) {
+    for (let k = 0; k < 10; k++) {
 
     let fila = tbody.insertRow();
 
@@ -60,5 +61,10 @@ function agregarRutina() {
    
 }
 
+// function nombreCliente(){
+//     let sCedula=getCliente();
+//     let mListaUsuarios=obtenerListaUsuarios();
+//     NombreCliente.innerHTML=sCedula;
 
+// }
 
