@@ -9,3 +9,4 @@ function getCliente(){
     let Mcliente = JSON.parse(localStorage.getItem('cliente'));
     return Mcliente;
 }
+

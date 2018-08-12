@@ -39,6 +39,7 @@ function agregarRutina() {
         let celdaNombre = fila.insertCell();
         let celdaCategoria = fila.insertCell();
         let celdaNombreOpcional = fila.insertCell();
+        let celdaConfiguracion = fila.insertCell();
 
         
 
@@ -57,14 +58,23 @@ function agregarRutina() {
         };
         imagen.src = imagenUrl;
         celdaFoto.appendChild(imagen);
+
+
+        let botonIconoEditar = document.createElement('a');
+        botonIconoEditar.classList.add('fa');
+        botonIconoEditar.classList.add('fa-edit');
+
+        let botonIconoBorrar = document.createElement('a');
+        botonIconoBorrar.classList.add('fa');
+        botonIconoBorrar.classList.add('fa-trash');
+        botonIconoEditar.addEventListener('click' , eliminar);
+
+        celdaConfiguracion.appendChild(botonIconoEditar);
+        celdaConfiguracion.appendChild(botonIconoBorrar);
     }
    
 }
 
-// function nombreCliente(){
-//     let sCedula=getCliente();
-//     let mListaUsuarios=obtenerListaUsuarios();
-//     NombreCliente.innerHTML=sCedula;
+// eliminar();
 
-// }
 

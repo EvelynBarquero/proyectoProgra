@@ -1,4 +1,4 @@
-let sCedulaPerimetro = [];
+let sCedulaPerimetro = getCliente();
 let labesCliente = [];
 let bicepD = [];
 let bicepI = [];
@@ -13,6 +13,68 @@ let abdomen = [];
 let cadera = [];
 let pecho = [];
 let espalda = [];
+
+const mostrarTablaMediciones = () => {
+    let mListaMediciones = obtenerListaMediciones();
+    let tbody = document.querySelector('#tblPerimetros tbody');
+    tbody.innerHTML = '';
+    for (let i = 0; i < mListaMediciones.length; i++) {
+
+        if (mListaMediciones[i][14] == sCedulaPerimetro) {
+            let fila = tbody.insertRow();
+
+            let celdaFecha = fila.insertCell();
+            let celdaBicepDerecho = fila.insertCell();
+            let celdaBicepIzquierdo = fila.insertCell();
+            let celdaBicepContDerecho = fila.insertCell();
+            let celdaBicepContIzquierdo = fila.insertCell();
+            let celdaPantorrillaDerecha = fila.insertCell();
+            let celdaPantorrillaIzquierda = fila.insertCell();
+            let celdaMusloDerecho = fila.insertCell();
+            let celdaMusloIzquierdo = fila.insertCell();
+            let celdaCintura = fila.insertCell();
+            let celdaAbdomen = fila.insertCell();
+            let celdaCadera = fila.insertCell();
+            let celdaPecho = fila.insertCell();
+            let celdaEspalda = fila.insertCell();
+            celdaFecha.innerHTML = mListaMediciones[i][0];
+            celdaBicepDerecho.innerHTML = mListaMediciones[i][1];
+            celdaBicepIzquierdo.innerHTML = mListaMediciones[i][2];
+            celdaBicepContDerecho.innerHTML = mListaMediciones[i][3];
+            celdaBicepContIzquierdo.innerHTML = mListaMediciones[i][4];
+            celdaPantorrillaDerecha.innerHTML = mListaMediciones[i][5];
+            celdaPantorrillaIzquierda.innerHTML = mListaMediciones[i][6];
+            celdaMusloDerecho.innerHTML = mListaMediciones[i][7];
+            celdaMusloIzquierdo.innerHTML = mListaMediciones[i][8];
+            celdaCintura.innerHTML = mListaMediciones[i][9];
+            celdaAbdomen.innerHTML = mListaMediciones[i][10];
+            celdaCadera.innerHTML = mListaMediciones[i][11];
+            celdaPecho.innerHTML = mListaMediciones[i][12];
+            celdaEspalda.innerHTML = mListaMediciones[i][13];
+
+            labesCliente.push(mListaMediciones[i][0]);
+            bicepD.push(mListaMediciones[i][1]);
+            bicepI.push(mListaMediciones[i][2]);
+            bicepCD.push(mListaMediciones[i][3]);
+            bicepCI.push(mListaMediciones[i][4]);
+            pantorrillaD.push(mListaMediciones[i][5]);
+            pantorrillaI.push(mListaMediciones[i][6]);
+            musloD.push(mListaMediciones[i][7]);
+            musloI.push(mListaMediciones[i][8]);
+            cintura.push(mListaMediciones[i][9]);
+            abdomen.push(mListaMediciones[i][10]);
+            cadera.push(mListaMediciones[i][11]);
+            pecho.push(mListaMediciones[i][12]);
+            espalda.push(mListaMediciones[i][13]);
+        }
+
+
+    };
+    console.log(sCedulaPerimetro);
+};
+
+
+
 
 function showGrafic() {
     var x = document.getElementById("line-chart");
@@ -32,7 +94,6 @@ function showGrafic() {
                 borderColor: "#375359",
                 backgroundColor: '#375359',
                 fill: false,
-                fontSize: '20'
             }, {
                 data: bicepI,
                 label: "Bicep-I",
@@ -124,6 +185,11 @@ function showGrafic() {
         }
     });
 }
+
+mostrarTablaMediciones();
+
+
+
 function hide() {
     var x = document.getElementById("tableEdit");
     if (x.style.display === "none") {

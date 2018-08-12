@@ -86,6 +86,12 @@ function construirRutinaCliente(){
 
 
 
+// function eliminar (i) {
+//     document.getElementById('tblEjercicios').deleteRow(i);
+// }
+
+
+// splice a la matriz 
 
 
 
