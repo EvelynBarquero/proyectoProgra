@@ -5,7 +5,9 @@ const obtenerListaIMC = () =>{
     let mListaMediciones = JSON.parse(localStorage.getItem('listaIMCLS'));
     if(mListaMediciones == null){
         mListaMediciones = [
-            ['2017-06-22','23','34', '54', "116320103"]
+            ['2017-06-22','23','34', '54', "116320103"],
+            ['2017-07-22','23','34', '54', "116320103"]
+
         ];
     }
 

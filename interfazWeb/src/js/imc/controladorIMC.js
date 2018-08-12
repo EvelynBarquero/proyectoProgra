@@ -15,6 +15,11 @@ botonActualizar.hidden = true;
 
 let sCedulaIMC = getCliente();
 
+let labesCliente=[];
+let dataEstatura=[];
+let dataPeso=[];
+let dataIMC=[];
+
 const mostrarTablaMediciones = () => {
     let mIMC = obtenerListaIMC();
     let tbody = document.querySelector('#tblPerimetros tbody');
@@ -34,6 +39,11 @@ const mostrarTablaMediciones = () => {
             celdaEstatura.innerHTML = mIMC[i][1];
             celdaPeso.innerHTML = mIMC[i][2];
             celdaIMC.innerHTML = mIMC[i][3];
+
+            labesCliente.push(mIMC[i][0]);
+            dataEstatura.push(mIMC[i][1]);
+            dataPeso.push(mIMC[i][2]);
+            dataIMC.push(mIMC[i][3]);
 
         }
     };
@@ -120,6 +130,53 @@ function show() {
 
 function hide() {
     var x = document.getElementById("tableEdit");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+function showGrafic() {
+    var x = document.getElementById("line-chart");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+    new Chart(document.getElementById("line-chart"), {
+
+        type: 'line',
+        data: {
+            labels: labesCliente,
+            datasets: [{
+                data: dataEstatura,
+                label: "Estatura",
+                borderColor: "#3e95cd",
+                fill: false
+            }, {
+                data: dataPeso,
+                label: "Peso",
+                borderColor: "#8e5ea2",
+                fill: false
+            }, {
+                data: dataIMC,
+                label: "IMC",
+                borderColor: "#3cba9f",
+                fill: false
+            },
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Historico de mediciones',
+            }
+        }
+    });
+}
+
+function hideGrafic() {
+    var x = document.getElementById("line-chart");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
