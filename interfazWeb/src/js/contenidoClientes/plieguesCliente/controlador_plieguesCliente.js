@@ -26,58 +26,68 @@ function showGrafic() {
             datasets: [{
                 data: tricepD,
                 label: "Tricep-D",
-                borderColor: "#3e95cd",
-                fill: false
+                borderColor: "#375359",
+                backgroundColor: '#375359',
+                fill: false,
             }, {
                 data: tricepI,
                 label: "Tricep-I",
-                borderColor: "#8e5ea2",
-                fill: false
+                borderColor: "#356975",
+                fill: false,
+                backgroundColor: '#356975',
             }, {
                 data: subescapularD,
-                label: "Subescapular-D",
-                borderColor: "#3cba9f",
-                fill: false
+                label: "Subesc-D",
+                borderColor: "#477d9e",
+                fill: false,
+                backgroundColor: '#477d9e',
             }, {
                 data: subescapularI,
-                label: "Subescapular-D",
-                borderColor: "#e8c3b9",
-                fill: false
+                label: "Subesc-D",
+                borderColor: "#6a9aa5",
+                fill: false,
+                backgroundColor: '#6a9aa5',
             }, {
                 data: supraespinalD,
-                label: "Supraespinal-D",
-                borderColor: "#c45850",
-                fill: false
+                label: "Supraesp-D",
+                borderColor: "#66a7d8",
+                fill: false,
+                backgroundColor: '#66a7d8',
             },
             {
                 data: supraespinalI,
-                label: "Supraespinal-I",
-                borderColor: "#81F7BE",
-                fill: false
+                label: "Supraesp-I",
+                borderColor: "#7fcfe4",
+                fill: false,
+                backgroundColor: '#7fcfe4',
             },
             {
                 data: abdominalD,
                 label: "Abdominal-D",
-                borderColor: "#2EFE2E",
-                fill: false
+                borderColor: "#8ec2ae",
+                fill: false,
+                backgroundColor: '#8ec2ae',
             },
             {
                 data: abdominalI,
                 label: "AbdominalD-I",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#ace5bb",
+                fill: false,
+                backgroundColor: '#ace5bb',
             },
             {
                 data: grasaSub,
                 label: "Grasa Subcutanea",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#cce5d5",
+                fill: false,
+                backgroundColor: '#cce5d5',
             },
             {
                 data: grasaMusc,
                 label: "Grasa muscular",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#cceaea",
+                fill: false,
+                backgroundColor: '#cceaea'
             },
             ]
         },

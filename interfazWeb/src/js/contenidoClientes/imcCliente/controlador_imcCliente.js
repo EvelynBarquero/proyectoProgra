@@ -20,18 +20,21 @@ function showGrafic() {
             datasets: [{
                 data: estatura,
                 label: "Estatura",
-                borderColor: "#8ec2ae",
-                fill: false
+                borderColor: "#356975",
+                fill: false,
+                backgroundColor: '#356975',
             }, {
                 data: peso,
                 label: "Peso",
                 borderColor: "#7fcfe4",
-                fill: false
+                fill: false,
+                backgroundColor: '#7fcfe4',
             }, {
                 data: imc,
                 label: "IMC ",
-                borderColor: "#ee6085",
-                fill: false
+                borderColor: "#b77bb1",
+                fill: false,
+                backgroundColor: '#b77bb1'
             }, 
             ]
         },

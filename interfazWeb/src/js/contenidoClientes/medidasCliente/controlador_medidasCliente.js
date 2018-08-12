@@ -14,15 +14,6 @@ let cadera = [];
 let pecho = [];
 let espalda = [];
 
-// function show() {
-//     var x = document.getElementById("tableEdit");
-//     if (x.style.display === "block") {
-//         x.style.display = "none";
-//     } else {
-//         x.style.display = "block";
-//     }
-// }
-
 function showGrafic() {
     var x = document.getElementById("line-chart");
     if (x.style.display === "block") {
@@ -38,76 +29,90 @@ function showGrafic() {
             datasets: [{
                 data: bicepD,
                 label: "Bicep-D",
-                borderColor: "#3e95cd",
-                fill: false
+                borderColor: "#375359",
+                backgroundColor: '#375359',
+                fill: false,
+                fontSize: '20'
             }, {
                 data: bicepI,
                 label: "Bicep-I",
-                borderColor: "#8e5ea2",
-                fill: false
+                borderColor: "#356975",
+                fill: false,
+                backgroundColor: '#356975',
             }, {
                 data: bicepCD,
                 label: "Bicep-C-D",
-                borderColor: "#3cba9f",
-                fill: false
+                borderColor: "#477d9e",
+                fill: false,
+                backgroundColor: '#477d9e',
             }, {
                 data: bicepCI,
                 label: "Bicep-C-I",
-                borderColor: "#e8c3b9",
-                fill: false
+                borderColor: "#6a9aa5",
+                fill: false,
+                backgroundColor: '#6a9aa5',
             }, {
                 data: pantorrillaD,
                 label: "Pantorilla-D",
-                borderColor: "#c45850",
-                fill: false
+                borderColor: "#66a7d8",
+                fill: false,
+                backgroundColor: '#66a7d8',
             },
             {
                 data: pantorrillaI,
                 label: "Pantorilla-I",
-                borderColor: "#81F7BE",
-                fill: false
+                borderColor: "#7fcfe4",
+                fill: false,
+                backgroundColor: '#7fcfe4',
             },
             {
                 data: musloD,
                 label: "Muslo-D",
-                borderColor: "#2EFE2E",
-                fill: false
+                borderColor: "#8ec2ae",
+                fill: false,
+                backgroundColor: '#8ec2ae',
             },
             {
                 data: musloI,
                 label: "Muslo-I",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#ace5bb",
+                fill: false,
+                backgroundColor: '#ace5bb',
             },
             {
                 data: cintura,
                 label: "Cintura",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#cce5d5",
+                fill: false,
+                backgroundColor: '#cce5d5',
             },
             {
                 data: abdomen,
                 label: "Abdomen",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#cceaea",
+                fill: false,
+                backgroundColor: '#cceaea'
             },
             {
                 data: cadera,
                 label: "Cadera",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#f2c4d3",
+                fill: false,
+                backgroundColor: '#f2c4d3'
             },
             {
                 data: pecho,
                 label: "Pecho",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#d69dc3",
+                fill: false,
+                backgroundColor: '#d69dc3'
             },
             {
                 data: espalda,
                 label: "Espalda",
-                borderColor: "#BF00FF",
-                fill: false
+                borderColor: "#b77bb1",
+                fill: false,
+                backgroundColor: '#b77bb1'
             }
             ]
         },
