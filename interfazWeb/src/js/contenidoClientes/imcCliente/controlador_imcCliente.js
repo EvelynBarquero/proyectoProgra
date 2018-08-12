@@ -1,18 +1,8 @@
 let sCedulaPerimetro = [];
-let labesCliente = [];
-let bicepD = [];
-let bicepI = [];
-let bicepCD = [];
-let bicepCI = [];
-let pantorrillaD = [];
-let pantorrillaI = [];
-let musloD = [];
-let musloI = [];
-let cintura = [];
-let abdomen = [];
-let cadera = [];
-let pecho = [];
-let espalda = [];
+let labesIMC= [];
+let estatura = [];
+let peso = [];
+let imc = [];
 
 
 function showGrafic() {
@@ -26,81 +16,23 @@ function showGrafic() {
 
         type: 'line',
         data: {
-            labels: labesCliente,
+            labels: labesIMC,
             datasets: [{
-                data: bicepD,
-                label: "Bicep-D",
-                borderColor: "#3e95cd",
+                data: estatura,
+                label: "Estatura",
+                borderColor: "#8ec2ae",
                 fill: false
             }, {
-                data: bicepI,
-                label: "Bicep-I",
-                borderColor: "#8e5ea2",
+                data: peso,
+                label: "Peso",
+                borderColor: "#7fcfe4",
                 fill: false
             }, {
-                data: bicepCD,
-                label: "Bicep-C-D",
-                borderColor: "#3cba9f",
+                data: imc,
+                label: "IMC ",
+                borderColor: "#ee6085",
                 fill: false
-            }, {
-                data: bicepCI,
-                label: "Bicep-C-I",
-                borderColor: "#e8c3b9",
-                fill: false
-            }, {
-                data: pantorrillaD,
-                label: "Pantorilla-D",
-                borderColor: "#c45850",
-                fill: false
-            },
-            {
-                data: pantorrillaI,
-                label: "Pantorilla-I",
-                borderColor: "#81F7BE",
-                fill: false
-            },
-            {
-                data: musloD,
-                label: "Muslo-D",
-                borderColor: "#2EFE2E",
-                fill: false
-            },
-            {
-                data: musloI,
-                label: "Muslo-I",
-                borderColor: "#BF00FF",
-                fill: false
-            },
-            {
-                data: cintura,
-                label: "Cintura",
-                borderColor: "#BF00FF",
-                fill: false
-            },
-            {
-                data: abdomen,
-                label: "Abdomen",
-                borderColor: "#BF00FF",
-                fill: false
-            },
-            {
-                data: cadera,
-                label: "Cadera",
-                borderColor: "#BF00FF",
-                fill: false
-            },
-            {
-                data: pecho,
-                label: "Pecho",
-                borderColor: "#BF00FF",
-                fill: false
-            },
-            {
-                data: espalda,
-                label: "Espalda",
-                borderColor: "#BF00FF",
-                fill: false
-            }
+            }, 
             ]
         },
         options: {
