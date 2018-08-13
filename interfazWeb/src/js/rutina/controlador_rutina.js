@@ -64,13 +64,13 @@ function agregarRutina() {
         botonIconoEditar.classList.add('fa');
         botonIconoEditar.classList.add('fa-edit');
 
-        let botonIconoBorrar = document.createElement('a');
-        botonIconoBorrar.classList.add('fa');
-        botonIconoBorrar.classList.add('fa-trash');
-        botonIconoEditar.addEventListener('click' , eliminar);
+        // let botonIconoBorrar = document.createElement('a');
+        // botonIconoBorrar.classList.add('fa');
+        // botonIconoBorrar.classList.add('fa-trash');
+        // botonIconoEditar.addEventListener('click' , eliminar);
 
-        celdaConfiguracion.appendChild(botonIconoEditar);
-        celdaConfiguracion.appendChild(botonIconoBorrar);
+        // celdaConfiguracion.appendChild(botonIconoEditar);
+        // celdaConfiguracion.appendChild(botonIconoBorrar);
     }
    
 }

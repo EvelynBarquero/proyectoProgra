@@ -39,7 +39,7 @@ const obtenerListaEjercicios = () =>{
     return mListaEjercicios;
 }
 
-const obtenerListaRutinas = () =>{
+function obtenerListaRutinas (){
     let mListaRutinas = JSON.parse(localStorage.getItem('ListaRutinasLS'));
     if(mListaRutinas == null){
         mListaRutinas = [
