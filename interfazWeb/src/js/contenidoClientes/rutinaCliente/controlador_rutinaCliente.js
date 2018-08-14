@@ -1,3 +1,7 @@
+// WEB03 Fundamentos de Programación Web G1 (2-2018) 
+// Proyecto final segundo cuatrimestre 2018
+// Evelyn Barquero - Javier Mendez
+
 'use strict';
 
 let clienteRutina=getCliente();

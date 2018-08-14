@@ -40,7 +40,6 @@ const registrarPliegues = (paNuevaMedida) =>{
 //                 sumatoria=sumatoria+mListaMediciones[i][j];
 //             }
 //         }
-
 //     }
 //     return sumatoria;
 // }
