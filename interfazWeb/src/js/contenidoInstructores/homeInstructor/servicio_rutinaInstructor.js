@@ -80,13 +80,15 @@ function getCliente(){
     return Mcliente;
 }
 
-function construirRutinaCliente(){
-    window.location=("rutina.html");
+function costruirMedicionesCliente(){
+    window.location=("instructorMedidas.html");
 }
 
-// function construirRutinaClienteInstructor(){
-//     window.location=("instructorMedidas.html");
-// }
+
+function construirRutinaCliente(){
+    window.location=("instructorRutina.html");
+}
+
 
 
 

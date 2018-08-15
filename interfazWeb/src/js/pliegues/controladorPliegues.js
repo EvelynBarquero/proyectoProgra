@@ -192,59 +192,69 @@ function showGrafic() {
             labels: labesCliente,
             datasets: [{
                 data: TricepD,
-                label: "Tricep-Derecho",
-                borderColor: "#3e95cd",
-                fill: false
+                label: "Tricep-D",
+                borderColor: "#375359",
+                backgroundColor: '#375359',
+                fill: false,
             }, {
                 data: TricepI,
-                label: "Tricep-Izquierdo",
-                borderColor: "#8e5ea2",
-                fill: false
+                label: "Tricep-I",
+                borderColor: "#356975",
+                fill: false,
+                backgroundColor: '#356975',
             }, {
                 data: SubescapularD,
-                label: "Subescapular derecho",
-                borderColor: "#3cba9f",
-                fill: false
+                label: "Subesc-D",
+                borderColor: "#356975",
+                fill: false,
+                backgroundColor: '#356975',
             }, {
                 data: SubescapularI,
-                label: "Subescapular izquierdo",
-                borderColor: "#e8c3b9",
-                fill: false
+                label: "Subesc-I",
+                borderColor: "#477d9e",
+                fill: false,
+                backgroundColor: '#477d9e',
             }, {
                 data: SupraespinalD,
-                label: "Supraespinal derecha",
-                borderColor: "#c45850",
-                fill: false
+                label: "Supraes-D",
+                borderColor: "#6a9aa5",
+                fill: false,
+                backgroundColor: '#6a9aa5',
             },
             {
                 data: SupraespinalI,
-                label: "Supraespinal izquierda",
-                borderColor: "#81F7BE",
-                fill: false
+                label: "Supraesp-I",
+                borderColor: "#66a7d8",
+                fill: false,
+                backgroundColor: '#66a7d8',
             },
             {
                 data: AbdominalD,
-                label: "Abdominal derecho",
-                borderColor: "#2EFE2E",
-                fill: false
+                label: "Abdominal-D",
+                borderColor: "#7fcfe4",
+                fill: false,
+                backgroundColor: '#7fcfe4',
             },
             {
                 data: AbdominalI,
-                label: "Abdominal izquierdo",
-                borderColor: "#BF00FF",
-                fill: false
+                label: "Abdominal-I",
+                borderColor: "#8ec2ae",
+                fill: false,
+                backgroundColor: '#8ec2ae',
             },
             {
                 data: GrasaS,
-                label: "%Grasa subcutanea",
-                borderColor: "#BF00FF",
-                fill: false
+                label: "%GrasaSub",
+                borderColor: "#ace5bb",
+                fill: false,
+                backgroundColor: '#ace5bb',
             },
             {
                 data: GrasaM,
-                label: "%Grasa muscular",
-                borderColor: "#BF00FF",
-                fill: false
+                label: "%GrasaMusc",
+                borderColor: "#cce5d5",
+                fill: false,
+                backgroundColor: '#cce5d5',
             },
             ]
         },
@@ -255,13 +265,4 @@ function showGrafic() {
             }
         }
     });
-}
-
-function hideGrafic() {
-    var x = document.getElementById("line-chart");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
 }

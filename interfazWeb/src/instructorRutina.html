@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rutina</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+
+  <!-- Fontawesome -->
+  <!-- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
+  <!-- Coreui -->
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/coreui-icons.min.css">
+
+  <!-- Links -->
+  <!-- <link href="css/reset.css" rel="stylesheet"> -->
+  <link href="css/reports.css" rel="stylesheet">
+
+  <!-- Icons-->
+  <link href="node_modules/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body class="sidebar-lg-show">
+
+  <header class="app-header navbar bar">
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="../img/login/blueLogo.png" alt="logo" width="60%">
+    </a>
+    <ul class="nav navbar-nav ml-auto">
+
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user-circle"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" onClick="location.href='login.html'">
+            <i class="fa fa-lock"></i> Logout</a>
+        </div>
+      </li>
+    </ul>
+
+  </header>
+
+  <div class="app-body">
+      <div class="sidebar">
+        <nav class="sidebar-nav">
+          <ul class="nav">
+            <li class="nav-item selected">
+              <a class="nav-link" onClick="location.href='InstructorInterfazHome.html'">
+                <i class="nav-iconSelected icon-chart"></i> Clientes
+              </a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" onClick="location.href='instructorEjercicios.html'">
+                <i class="nav-icon icon-vector"></i> Ejercicios
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  
+
+    <div class="container-fluid">
+      <!-- Cards -->
+      <h4 class="margin marginTop">Rutina-<span id="txtNombreCliente"></span></h4>
+      <button class="btn btn-primary margin" id="btnRutina" type="button">Añadir rutina aleatoria</button>
+
+      <div>
+        <table id="tblEjercicios" class="table table-responsive-sm table-sm">
+
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Nombre opcional</th>
+              <th>Editar</th>
+
+            </tr>
+
+            <td colspan="12">
+              <input id="buscar" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
+            </td>
+
+          </thead>
+          <tbody>
+
+          </tbody>
+
+
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  <aside class="aside-menu">
+    <!-- Aside menu content here -->
+  </aside>
+  </div>
+
+</body>
+<footer class="app-footer">
+  <!-- Footer content here -->
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+  crossorigin="anonymous"></script>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+  crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2"></script>
+
+<!--Inicio: Scripts para cloudinary -->
+<script src="js/rutina/"></script>
+<script src='https://cdn.jsdelivr.net/jquery.cloudinary/1.0.18/jquery.cloudinary.js' type='text/javascript'></script>
+<script src="https://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+<script src="js/rutina/"></script>
+<!--Fin: Scripts para cloudinary -->
+
+<script src="js/rutina/servicio_rutina.js"></script>
+<script src="js/clientes_admin/servicio_clientes_admin.js"></script>
+<!-- <script src="js/registrar/servicio_registrar.js"></script> -->
+<!-- <script src="js/ejercicios/servicio_ejercicios.js"></script> -->
+<script src="js/rutina/controlador_rutina.js"></script>
+<script src="js/rutina/filter.js"></script>
+<script type="text/javascript"></script>
+
+
+
+
+
+
+</body>
+
+</html>

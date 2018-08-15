@@ -183,7 +183,6 @@ function showGrafic() {
     } else {
         x.style.display = "block";
     }
-
     new Chart(document.getElementById("line-chart"), {
 
         type: 'line',
@@ -195,7 +194,6 @@ function showGrafic() {
                 borderColor: "#375359",
                 backgroundColor: '#375359',
                 fill: false,
-                fontSize: '20'
             }, {
                 data: bicepI,
                 label: "Bicep-I",
@@ -287,6 +285,7 @@ function showGrafic() {
         }
     });
 }
+
 function hide() {
     var x = document.getElementById("tableEdit");
     if (x.style.display === "none") {

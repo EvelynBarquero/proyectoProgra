@@ -27,7 +27,7 @@ function iniciarSesion() {
         }else{
             if(bUsuario==2){
                 localStorage.setItem('cliente', JSON.stringify(sCedula));
-                window.location = ("interfazRutinaCliente.html");
+                window.location = ("instructorInterfazHome.html");
             }else{
                 if(bUsuario==3){
                     localStorage.setItem('cliente', JSON.stringify(sCedula));
