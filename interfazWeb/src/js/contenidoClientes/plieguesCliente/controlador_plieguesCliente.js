@@ -19,7 +19,7 @@ const mostrarTablaMediciones = () => {
     tbody.innerHTML = '';
 
     for (let i = 0; i < mPliegues.length; i++) {
-        if (mPliegues[i][12] == sCedulaPliegue) {
+        if (mPliegues[i][11] == sCedulaPliegue) {
             let fila = tbody.insertRow();
 
             let celdaFecha = fila.insertCell();

@@ -53,7 +53,13 @@ function crearCuenta(){
     //bUsuario=validarUsuario()
     
     if(inputsInvalidos==true){
-        window.alert("Error message to be added")
+        swal({
+            type: "error",
+            title: "Informacion invalida",
+            text: "Verifique los espacios en rojo",
+            confirmButtonText: "Entendido"
+
+        })
     }
     else{
         let nuevoUsuario=[];
