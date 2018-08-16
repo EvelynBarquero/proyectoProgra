@@ -58,7 +58,6 @@ function crearCuenta(){
     else{
         let nuevoUsuario=[];
         nuevoUsuario.push(cedula,password,primerNombre,segundoNombre,primerApellido,segundoApellido,fecha,edad,sexo,telefono,foto,"user");
-        console.log(nuevoUsuario);
         registrarUsuario(nuevoUsuario);
         crearMenuUsuario(cedula);
     }

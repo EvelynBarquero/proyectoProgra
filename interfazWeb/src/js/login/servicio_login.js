@@ -14,13 +14,13 @@ function validarUsuario(psCedula,psPassword){
         }
     }
     for(let i=0; i<listaInstructores.length; i++){
-        if(listaInstructores[i][0]==psCedula){
-            if(listaInstructores[i][1]==psPassword){
+        if(listaInstructores[i][4]==psCedula){
+            if(listaInstructores[i][10]==psPassword){
                 bUsuario=2;
             }
         }
     }
-    if(psCedula==999999999&psPassword=="Admin123"){
+    if(psCedula==999999999 & psPassword=="Admin123"){
         bUsuario=3
     }
     return bUsuario;

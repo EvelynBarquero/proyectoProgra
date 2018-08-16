@@ -245,6 +245,17 @@ const mostrarNumeroClientes = () =>{
     let dDiv = document.querySelector("#txtNumeroClientes");
     dDiv.innerHTML=numeroClientes;
 }
+const mostrarNumeroInstructores = () =>{
+    let numeroInstructores=0;
+    numeroInstructores = determinarNumeroInstructores();
+    let dDIV = document.querySelector("#txtNumeroInstructores");
+    dDIV.innerHTML=numeroInstructores;
+}
+const mostrarNumeroEjercicios = () =>{
+    let numeroEjercicios = determinarNumeroEjercicios();
+    let dDiv = document.querySelector("#txtNumeroEjercicios");
+    dDiv.innerHTML=numeroEjercicios;
+}
 
 // Metodo que muestra el div de registrar usuario 
 function show() {
@@ -348,8 +359,9 @@ function validarInputs(){
 };
 
 // Carga de pagina
-
+mostrarNumeroInstructores();
 mostrarNumeroClientes();
+mostrarNumeroEjercicios();
 mostrarTablaUsuarios();
 hide();
 

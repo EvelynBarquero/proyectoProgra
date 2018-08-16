@@ -52,7 +52,7 @@ const mostrarTablaMediciones = () => {
 
 
 const limpiarFormulario = () => {
-    inputFecha.value = 0;
+    inputFecha.value = "";
     inputEstatura.value = 0;
     inputPeso.value = 0;
 };
@@ -64,9 +64,9 @@ const obtenerDatosRegistro = () => {
     let dFecha = inputFecha.value;
     let nEstatura = inputEstatura.value;
     let nPeso = inputPeso.value;
+    let imc = calcularIMC(nEstatura,nPeso);
 
-
-    aNuevaMedida.push(dFecha, nEstatura, nPeso);
+    aNuevaMedida.push(dFecha, nEstatura, nPeso, imc,sCedulaIMC);
     registrarMedida(aNuevaMedida);
     mostrarTablaMediciones();
     limpiarFormulario();

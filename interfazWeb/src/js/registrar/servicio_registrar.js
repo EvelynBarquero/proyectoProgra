@@ -22,7 +22,8 @@ const registrarUsuario = (paNuevoUsuario) =>{
 };
 
 const crearMenuUsuario=(pCedula)=>{
-    window.alert("Se creo el usuario - menu to be added");
+    localStorage.setItem('cliente', JSON.stringify(pCedula));
+    window.location = ("interfazRutinaCliente.html")
 };
 
 const determinarNumeroClientes = () =>{

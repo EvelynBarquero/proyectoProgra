@@ -41,7 +41,7 @@ const mostrarTablaMediciones = () => {
     tbody.innerHTML = '';
 
     for (let i = 0; i < mPliegues.length; i++) {
-        if (mPliegues[i][12] == sCedulaPliegue) {
+        if (mPliegues[i][11] == sCedulaPliegue) {
             let fila = tbody.insertRow();
 
             let celdaFecha = fila.insertCell();
@@ -87,7 +87,7 @@ const mostrarTablaMediciones = () => {
 
 
 const limpiarFormulario = () => {
-    inputFecha.value = 0;
+    inputFecha.value = "";
     inputTricepDerecho.value = 0;
     inputTricepIzquierdo.value = 0;
     inputSubescapularDerecho.value = 0;
@@ -112,9 +112,12 @@ const obtenerDatosRegistro = () => {
     let nSupraespinalIzquierdo = inputSupraespinalIzquierdo.value;
     let nAbdominalDerecho = inputAbdominalDerecho.value;
     let nAbdominalIzquierdo = inputAbdominalIzquierdo.value;
+    let nGrasaSubcutanea = calcularGSubcutanea(nTricepDerecho,nTricepIzquierdo,nSubescapularDerecho,nSubescapularIzquierdo,nSupraespinalDerecho,nSupraespinalIzquierdo,nAbdominalDerecho,nAbdominalIzquierdo);
+    let nGrasaMuscular = calcularGMuscular(nTricepDerecho,nTricepIzquierdo,nSubescapularDerecho,nSubescapularIzquierdo,nSupraespinalDerecho,nSupraespinalIzquierdo,nAbdominalDerecho,nAbdominalIzquierdo);
 
-    aNuevaMedida.push(dFecha, nTricepDerecho, nTricepIzquierdo, nSubescapularDerecho, nSubescapularIzquierdo, nSupraespinalDerecho, nSupraespinalIzquierdo, nAbdominalDerecho, nAbdominalIzquierdo);
-    registrarMedida(aNuevaMedida);
+
+    aNuevaMedida.push(dFecha, nTricepDerecho, nTricepIzquierdo, nSubescapularDerecho, nSubescapularIzquierdo, nSupraespinalDerecho, nSupraespinalIzquierdo, nAbdominalDerecho, nAbdominalIzquierdo,nGrasaSubcutanea,nGrasaMuscular,sCedulaPliegue);
+    registrarPliegues(aNuevaMedida);
     mostrarTablaMediciones();
     limpiarFormulario();
 

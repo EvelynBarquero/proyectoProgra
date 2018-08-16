@@ -15,13 +15,17 @@ const obtenerListaIMC = () =>{
 };
 
 const registrarMedida = (paNuevaMedida) =>{
-    let mListaMediciones = obtenerListaMediciones();
+    let mListaMediciones = obtenerListaIMC();
 
     mListaMediciones.push(paNuevaMedida);
 
     localStorage.setItem('listaIMCLS', JSON.stringify(mListaMediciones));
 }; 
 
+function calcularIMC(altura,peso){
+    let imc=peso/(peso*peso);
+    return Math.round(imc);
+}
 
 // const mostrarMCI = (pnEstatura, pnPeso) => {
 
