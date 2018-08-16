@@ -23,3 +23,4 @@ $TableFilter = function(id, value){
         }
     }
 }
+
