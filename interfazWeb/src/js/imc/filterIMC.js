@@ -1,5 +1,5 @@
-document.querySelector("#buscar").onkeyup = function(){
-    $TableFilter("#tblUsuarios", this.value);
+document.querySelector("#buscarIMC").onkeyup = function(){
+    $TableFilter("#tblPerimetros", this.value);
 }
 
 $TableFilter = function(id, value){

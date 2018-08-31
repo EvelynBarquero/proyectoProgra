@@ -1,5 +1,5 @@
-document.querySelector("#buscarInstructor").onkeyup = function(){
-    $TableFilter("#tblInstructores", this.value);
+document.querySelector("#buscar").onkeyup = function(){
+    $TableFilter("#tblPliegues", this.value);
 }
 
 $TableFilter = function(id, value){
@@ -23,3 +23,4 @@ $TableFilter = function(id, value){
         }
     }
 }
+
