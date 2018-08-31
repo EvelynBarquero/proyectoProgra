@@ -22,7 +22,7 @@ function mostrarRutina() {
         let celdaNombre = fila.insertCell();
         let celdaCategoria = fila.insertCell();
         let celdaNombreOpcional = fila.insertCell();
-        let celdaConfiguracion = fila.insertCell();
+        // let celdaConfiguracion = fila.insertCell();
 
 
 

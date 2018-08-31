@@ -23,8 +23,8 @@ const registrarMedida = (paNuevaMedida) =>{
 }; 
 
 function calcularIMC(altura,peso){
-    let imc=peso/(peso*peso);
-    return Math.round(imc);
+    let imc=peso/Math.pow(altura,2);
+    return imc;
 }
 
 // const mostrarMCI = (pnEstatura, pnPeso) => {
